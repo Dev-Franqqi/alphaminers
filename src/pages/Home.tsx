@@ -1,7 +1,7 @@
 import CryptoList from "../components/Cryptolist";
 import Navbar from "../components/Homepage/Navbar";
 import Initial from "../components/Homepage/Initial";
-import building from '../assets/pngbuildingcom.png'
+
 import Firstsection from "../components/Homepage/Firstsection";
 import Thirdcomponent from "../components/Homepage/Thirdcomponent";
 import Secondsection from "../components/Homepage/Secondsection";
