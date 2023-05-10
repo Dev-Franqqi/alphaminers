@@ -15,12 +15,12 @@ export default function Login({}: Props) {
 <img src={Scalable} alt="" />
 
         </div>
-        <div className='p-10 mt-10 w-full md:w-3/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>
+        <div className='py-10 px-1 mt-10 w-full md:w-3/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>
             <h2 className='text-3xl font-bold text-center mt-10 mb-10'>LOGIN</h2>
 
-            <form className='flex flex-col h-3/5 '>
-                <input type='email' className='border-2 w-4/5 h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
-                <input type='password' className='border-2 w-4/5 h-10 p-1 rounded mx-auto mb-4' placeholder='Password' required/>
+            <form className='flex flex-col w-full md:h-3/5 '>
+                <input type='email' className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
+                <input type='password' className='border-2 w-full h-10 p-1 rounded mx-auto mb-4' placeholder='Password' required/>
                 <button type='submit' className='w-4/5 h-10 bg-blue-800 mx-auto text-center py-1 shadow-lg rounded text-white'>Submit</button>
 
             </form>
