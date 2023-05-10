@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import "../Crypto.css"
 
 type Crypto ={
@@ -9,12 +9,7 @@ type Crypto ={
   price_change_percentage_24h: number;
 }
 
-type Props ={
-  textC: string;
-  backG: string;
-}
-
-const CryptoList: React.FC<Props> = ({ textC, backG }) => {
+export default function CryptoList(){
   const [cryptoData, setCryptoData] = useState<Crypto[]>([]);
   const [fetchError, setFetchError] = useState(false);
 
@@ -36,11 +31,12 @@ const CryptoList: React.FC<Props> = ({ textC, backG }) => {
   }, []);
 
   if (fetchError) {
-    return ;
+    return <></> ;
   }
 
   return (
-    <div className={`py-1 overflow-x-hidden text-${textC} bg-${backG}`}>
+    <>
+    <div className={`py-1 overflow-x-hidden `}>
       <div className="flex space-x-4 animate-marquee">
         {cryptoData.map((crypto: Crypto) => (
           <div key={crypto.id} className="border rounded-lg px-4">
@@ -53,7 +49,6 @@ const CryptoList: React.FC<Props> = ({ textC, backG }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
-
-export default CryptoList;

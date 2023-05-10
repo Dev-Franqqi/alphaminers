@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-export default function Footer({}: Props) {
+export default function Footer() {
   return (
     <footer className=" bg-blue-900 px-5 py-10 text-gray-400 leading-8">
 

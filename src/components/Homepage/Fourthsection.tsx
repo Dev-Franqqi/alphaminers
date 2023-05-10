@@ -1,8 +1,5 @@
-import React from 'react'
-
-type Props = {}
-
-export default function Fourthsection({}: Props) {
+import {Link} from "react-router-dom"
+export default function Fourthsection() {
   return (
     
 <>
@@ -212,11 +209,10 @@ export default function Fourthsection({}: Props) {
       </div>
 
 
-      <button onClick={()=>{navigate('/login')}} className="fit-content px-10  py-3 mb-2 rounded text-white bg-blue-600">Setup your trading account</button>
+      <Link to='/login' className="fit-content px-10  py-3 mb-2 rounded text-white bg-blue-600">Setup your trading account</Link>
          <p className="text-gray-400">Registration takes only 40 seconds!</p>
       
     </section>
-
 
 
 

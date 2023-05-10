@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-export default function({}: Props) {
+export default function() {
   return (
     <section className="text-center px-10">
 

@@ -1,6 +1,5 @@
 import CryptoList from "../components/Cryptolist";
 import Navbar from "../components/Homepage/Navbar";
-import React from 'react'
 import building from '../assets/pngbuildingcom.png'
 import Firstsection from "../components/Homepage/Firstsection";
 import Thirdcomponent from "../components/Homepage/Thirdcomponent";
@@ -8,7 +7,7 @@ import Secondsection from "../components/Homepage/Secondsection";
 import Fourthsection from "../components/Homepage/Fourthsection";
 import Footer from "../components/Homepage/Footer";
 
-export default function Home({}: Props) {
+export default function Home() {
   return (
     <div className="font-sans">
 

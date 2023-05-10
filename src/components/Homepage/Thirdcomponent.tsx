@@ -1,19 +1,13 @@
-import React from 'react'
 import {motion} from 'framer-motion'
-type Props = {}
 
-export default function Thirdcomponent({}: Props) {
+
+export default function Thirdcomponent() {
   return (
-//     <motion.div
-//   initial={{ opacity: 0 }}
-//   whileInView={{ opacity: 1 }}>
 
-//     <h1>SUPPOSE TO SHOW</h1>
-
-// </motion.div>
 <motion.div
 initial={{opacity:0}}
-whileInView={{opacity:1, duration:3}}
+animate= {{opacity:1}}
+transition={{duration:3}}
 className='mb-10'>
   
 

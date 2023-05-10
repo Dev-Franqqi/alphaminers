@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-export default function Secondsection({}: Props) {
+export default function Secondsection() {
   return (
     <section className='text-center p-10 bg-blue-900 text-white'>
     <h2 className='font-bold text-xl mb-4'>ACCESS TO OUR FINANCIAL MARKETS</h2>
