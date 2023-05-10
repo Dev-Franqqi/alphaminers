@@ -17,8 +17,8 @@ export default function Signup({}: Props) {
             <h2 className='text-3xl font-bold text-center mt-10 mb-10'>SIGNUP</h2>
 
             <form className='flex flex-col h-3/5 '>
-                <input type='email' className='border-2 w-4/5 h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
-                <input type='password' className='border-2 w-4/5 h-10 p-1 rounded mx-auto mb-4' placeholder='Password' required/>
+                <input type='email' className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
+                <input type='password' className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Password' required/>
                 <button type='submit' className='w-4/5 h-10 bg-blue-800 mx-auto text-center py-1 shadow-lg rounded text-white'>Submit</button>
 
             </form>

@@ -8,7 +8,7 @@ const Navbar = () => {
     return ( 
                 <>
 
-                 <nav className="flex justify-between py-1 px-3 shadow-lg bg-violet-200 sticky top-0">
+                 <nav className="flex justify-between py-2 px-3 shadow-lg bg-black sticky top-0">
 
                 <header className="text-2xl my-auto font-extrabold"><NavLink to='/'>ALPHA MINERS</NavLink></header>
 

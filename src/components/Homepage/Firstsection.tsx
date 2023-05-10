@@ -1,7 +1,7 @@
 
 export default function() {
   return (
-    <section className="text-center px-10">
+    <section className="text-center text-white pt-7 px-10">
 
     <h2 className="text-3xl font-bold mb-8">Putting our investors first is Key</h2>
 
