@@ -7,7 +7,7 @@ type Props = {}
 export default function Login({}: Props) {
   return (
     <div className='w-full h-screen flex overflow-hidden font-sans px-10'>
-        <div className='hidden md:block px-5 h-full'>
+        <div className='hidden md:block px-5 text-white h-full'>
 
 <motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>ALPHA MINERS</Link></motion.h1>
 
@@ -15,8 +15,8 @@ export default function Login({}: Props) {
 <img src={Scalable} alt="" />
 
         </div>
-        <div className='py-10 px-1 mt-10 w-full md:w-3/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>
-            <h2 className='text-3xl font-bold text-center mt-10 mb-10'>LOGIN</h2>
+        <div className='py-10 px-1 md:px-5 mt-10 w-full md:w-3/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>
+            <h2 className='text-3xl font-bold text-white md:text-black text-center mt-10 mb-10'>LOGIN</h2>
 
             <form className='flex flex-col w-full md:h-3/5 '>
                 <input type='email' className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
@@ -30,7 +30,7 @@ export default function Login({}: Props) {
 
 
             <hr className="mt-5"/>
-            <footer className="text-center mt-1"><Link to='/'>ALPHA MINERS</Link></footer>
+            <footer className="text-center text-white md:text-black mt-1"><Link to='/'>ALPHA MINERS</Link></footer>
 
 
         </div>

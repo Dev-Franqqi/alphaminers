@@ -10,7 +10,7 @@ const Navbar = () => {
 
                  <nav className="flex justify-between py-2 px-3 shadow-lg bg-black sticky top-0">
 
-                <header className="text-2xl my-auto font-extrabold"><NavLink to='/'>ALPHA MINERS</NavLink></header>
+                <header className="text-2xl my-auto font-extrabold text-center"><NavLink to='/'>ALPHA MINERS</NavLink></header>
 
 
         <div className="hidden gap-6 md:flex md:justify-between w-2/5 ">
@@ -50,7 +50,7 @@ const Navbar = () => {
   
             
         </nav>
-        {menu &&   <div className="leading-10 text-center backdrop-blur sticky top-16 text-black text-2xl font-bold w-screen h-screen pt-8">
+        {menu &&   <div className="leading-10 text-center backdrop-blur sticky overflow-hidden text-white top-16 text-2xl font-bold w-screen h-screen pt-8">
              <ul className="">
                 <li className="my-5">Home</li>
                 <li className="my-5"><a href="#about">About</a></li>

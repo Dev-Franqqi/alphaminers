@@ -121,7 +121,7 @@ export default function Fourthsection() {
 
 
     <section className="text-center mb-8 p-8 bg-gray-200">
-        <h5 className="text-2xl text-gray-400 font-bold mb-3">Start trading with Widget Scale</h5>
+        <h5 className="text-2xl text-gray-500 font-bold mb-3">Start trading with Widget Scale</h5>
 
         <h5 className="text-3xl font-bold mb-5">Fast account opening in 3 simple steps</h5>
         
@@ -131,7 +131,7 @@ export default function Fourthsection() {
         
      <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">1</div>
      <p className="font-bold">Register</p>
-      <p className="text-sm  text-gray-400 font-bold">Create an account today on our trading platform</p>
+      <p className="text-sm  text-gray-500 font-bold">Create an account today on our trading platform</p>
 
 
      </div>
@@ -140,7 +140,7 @@ export default function Fourthsection() {
      <div className="mb-8 leading-8">
      <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">2</div>
      <p className="font-bold">Fund</p>
-      <p className="text-sm  text-gray-400 font-bold">Fund your account using a wide range of funding methods</p>
+      <p className="text-sm  text-gray-500 font-bold">Fund your account using a wide range of funding methods</p>
 
 
      </div>
@@ -149,7 +149,7 @@ export default function Fourthsection() {
      <div className="mb-8 leading-8">
      <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">3</div>
      <p className="font-bold">Trade</p>
-      <p className="text-sm  text-gray-400 font-bold">Access 180+ instruments across all asset classes inside the platform</p>
+      <p className="text-sm  text-gray-500 font-bold">Access 180+ instruments across all asset classes inside the platform</p>
 
 
      </div>
@@ -209,8 +209,8 @@ export default function Fourthsection() {
       </div>
 
 
-      <Link to='/login' className="fit-content px-10  py-3 mb-2 rounded text-white bg-blue-600">Setup your trading account</Link>
-         <p className="text-gray-400">Registration takes only 40 seconds!</p>
+      <Link to='/login' className="fit-content px-10  py-3 rounded text-white bg-blue-600">Setup your trading account</Link>
+         <p className="text-gray-400 mt-2">Registration takes only 40 seconds!</p>
       
     </section>
 
