@@ -66,7 +66,7 @@ export default function Fourthsection() {
             <li>✓Deposit bonuses: All offers</li>
             <li>✓Loyalty bonuses: Al offers</li>
         </ul>
-        <button className='bg-sky-600 text-white rounded py-2 px-4' >Choose Plan</button>
+        <button className='bg-sky-600 text-white rounded py-2 px-4' ><Link to='/dashboard'>Choose Plan</Link></button>
       
     </div>
     </div>
