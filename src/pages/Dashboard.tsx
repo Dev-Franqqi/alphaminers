@@ -1,9 +1,14 @@
-import Chartsre from "../components/Chartsre";
 import * as CryptoCharts from "cryptocharts"
 
 export default function Dashboard() {
     let currentDate = new Date();
-let options = { weekday: 'long', month: 'long', day: 'numeric' };
+    type Options ={
+        weekday:'long',
+        month:'long',
+        day:'numeric'
+    }
+    let options:Options = { weekday: 'long', month: 'long', day: 'numeric' };
+
 let formattedDate = currentDate.toLocaleDateString(undefined, options);
 try{
     CryptoCharts.roiComparison({
