@@ -6,8 +6,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { colref } from '../components/firebase';
 import { auth } from '../components/firebase';
 import { useNavigate } from "react-router-dom";
-
-
+import chartImage from "../assets/chartImage.png"
 
 
 export default function Signup() {
@@ -65,12 +64,12 @@ export default function Signup() {
     
   return (
     <div className='w-full h-screen flex justify-between overflow-hidden font-sans px-10'>
-        <div className='hidden text-white md:block px-5 h-full'>
+        <div className='hidden w-3/5 text-white md:block px-5 h-full'>
 
 <motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>ALPHA MINERS</Link></motion.h1>
 
 <motion.p initial={{opacity:0}}animate={{opacity:1}} className="hidden mt-2 text-sm md:block">...Scale to new heights</motion.p>
-
+    <img src={chartImage} alt="" />
 
         </div>
         <div className='py-10 px-1 md:px-5 mt-10 w-full md:w-2/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>

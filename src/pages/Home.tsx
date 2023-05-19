@@ -18,7 +18,7 @@ export default function Home() {
       hidden:{opacity:0},
       visible:{opacity:1}
     }
-
+4
 
   return (
     <motion.div initial={'hidden'} animate={'visible'} variants={vari} transition={transits} className="font-sans text-white">
