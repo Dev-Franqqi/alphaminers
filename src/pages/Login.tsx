@@ -1,10 +1,32 @@
 import Scalable from '../assets/scalable.png'
 import {motion} from "framer-motion"
 import { Link } from "react-router-dom";
+import { auth } from '../components/firebase';
+import {useState} from 'react'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-type Props = {}
+export default function Login() {
+  const navigate= useNavigate()
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
+  // const [error,setError] = useState(false)
+  const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault();
+    if(email !== '' && password !==''){
+      signInWithEmailAndPassword(auth,email,password)
+      .then(()=>{
+        navigate('/dashboard')
+      })
+      .catch(()=>{
+        // setError(true)
+        
 
-export default function Login({}: Props) {
+      })
+
+
+    }
+  }
   return (
     <div className='w-full h-screen flex overflow-hidden font-sans px-10'>
         <div className='hidden md:block px-5 text-white h-full'>
@@ -18,9 +40,9 @@ export default function Login({}: Props) {
         <div className='py-10 px-1 md:px-5 mt-10 w-full md:w-3/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>
             <h2 className='text-3xl font-bold text-white md:text-black text-center mt-10 mb-10'>LOGIN</h2>
 
-            <form className='flex flex-col w-full md:h-3/5 '>
-                <input type='email' className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
-                <input type='password' className='border-2 w-full h-10 p-1 rounded mx-auto mb-4' placeholder='Password' required/>
+            <form onSubmit={handleSubmit} className='flex flex-col w-full md:h-3/5 '>
+                <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
+                <input type='password'value={password}onChange={(e)=>setPassword(e.target.value)} className='border-2 w-full h-10 p-1 rounded mx-auto mb-4' placeholder='Password' required/>
                 <button type='submit' className='w-4/5 h-10 bg-blue-800 mx-auto text-center py-1 shadow-lg rounded text-white'>Submit</button>
 
             </form>
