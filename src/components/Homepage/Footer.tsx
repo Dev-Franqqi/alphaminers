@@ -40,8 +40,8 @@ export default function Footer() {
 
 <h6 className="border-l-8 border-l-gray-300 text-lg font-bold pl-5 my-5 ">Markets</h6>
 <ul>
-    <li>info@widgetscale.org</li>
-    <li>+1(909) 359-0441</li>
+    <li><a href="mailto:Alphaminers6@gmail.com">Alphaminers6@gmail.com</a></li>
+    <li><a href='tel:+12366023869'>+12366023869</a></li>
     <li>Georgia, CA 92100</li>
 </ul>
 </section>

@@ -34,7 +34,7 @@ export default function Home() {
    <CryptoList />
    <Navbar />
 
-   <motion.div initial='hidden' animate='visible' variants={vari} transition={whatsappt} className="bg-gray-200 md:bottom-2 fixed bottom-72 right-0  md:right-0 w-40 rounded "><Link className="flex" to='https://wa.me/+2347047669823'>
+   <motion.div initial='hidden' animate='visible' variants={vari} transition={whatsappt} className="bg-gray-200 md:bottom-2 fixed bottom-72 right-0  md:right-0 w-40 rounded "><Link className="flex" to='https://wa.me/+12366023869'>
      <img src={whatsapps} width={50} alt="" />
      <span className=" text-black self-center">Chat with us</span>
    </Link>
