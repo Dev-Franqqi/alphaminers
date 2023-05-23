@@ -1,14 +1,58 @@
-// import * as CryptoCharts from "cryptocharts"
+import * as CryptoCharts from "cryptocharts"
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie"
 import { signOut } from "firebase/auth";
 import { auth } from "../components/firebase";
 import { useState } from "react";
+import { query,where } from "firebase/firestore";
+import { collection } from "firebase/firestore";
+import { getDocs } from "firebase/firestore";
+import { db } from "../components/firebase";
+type B ={
+  uid: string,
+ email: string,
+emailVerified: boolean,
+isAnonymous: boolean,
+providerData: Array<object>,
+// 0:,
+providerId: string,
+
+displayName: string | null,
+
+phoneNumber: string | null,
+// ...
+apiKey: string,
+appName: string,
+createdAt: string,
+lastLoginAt: string,
+stsTokenManager:{
+accessToken: string,
+expirationTime: string,
+refreshToken: string,
+}
+}
+
+interface Person{
+  email:string;
+  amount:number;
+  firstname:string;
+  lastname:string;
+  uid:string;
+  password:string;
+  btcAmount:number;
+}
+
 export default function Dashboard() {
   const navigate = useNavigate()
+  const [user,setUser] = useState<Object|undefined>()
   const [error,setError] = useState(false)
   const [errmessage, setErrmessage] = useState('')
+  const [person,setPerson] = useState<undefined|Person>()
+  
+  
+
+  
     let currentDate = new Date();
     type Options ={
         weekday:'long',
@@ -24,23 +68,34 @@ export default function Dashboard() {
     }
 
 let formattedDate = currentDate.toLocaleDateString(undefined, options);
-// try{
-//     CryptoCharts.roiComparison({
-//       chart_id: "mychart",
-//       cryptocompare_tickers: ["BTC","ETH"],
-//       iconomi_tickers: ["BLX","CAR"],
-//       last_days: 90,
+try{
+    CryptoCharts.roiComparison({
+      chart_id: "mychart",
+      cryptocompare_tickers: ["BTC","ETH"],
+      iconomi_tickers: ["BLX","CAR"],
+      last_days: 90,
       
-//       })
+      })
 
 
-// }
-// catch (error) {
+}
+catch (error) {
   
-  // console.error(error);
+  
  
-  // alert("An error occurred while generating the chart.");
-// }
+  alert("An error occurred while generating the chart.");
+}
+
+const cookieValue =Cookies.get("User")
+const x:B = cookieValue !== undefined ? JSON.parse(cookieValue) : {email:'',
+amount:0,
+firstname:'',
+lastname:'',
+uid:'',
+password:'',
+btcAmount:0
+}
+console.log(x)
 
 const logoutHandler = ()=>{
 
@@ -62,16 +117,56 @@ useEffect(()=>{
         navigate('/login');
         
   
-      }          
+      }
+   
+
+
+
+      
 
 
 }
   check()
+  setUser(x)
 
-})
+
+  const q = query(
+    collection(db,"UserInfo"),
+    where("uid","==",`${x.uid}`)
+)
+
+ getDocs(q)
+    .then((snapshot) => {
+        // Handle query results
+    const inf:Person=snapshot.docs[0].data() as Person
+    console.log(inf)
+    setPerson(inf)
+    
+    })
+
+    .catch((error) => {
+        // Handle error
+        setError(true)
+        setErrmessage(error.message)
+    });
+  
+  console.log(user)
+
+
+  
+
+
+
+},[person])
 
   return (
+
+    <>
+
     <main className="bg-white flex flex-col justify-between w-screen h-screen py-4 px-2">
+      
+    
+          
            {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>}
         <section>
 
@@ -99,7 +194,7 @@ useEffect(()=>{
 </svg>
                 <div className="ml-2">
                     
-                    <h3 className="text-white">Deny Monson</h3>
+                   {user && <h3 className="text-white">{person?.email}</h3> } 
                     <p className="text-gray-300 text-xs">Personal</p>
                 </div>
                 
@@ -111,11 +206,30 @@ useEffect(()=>{
              </div>
 
              <hr />
+            {person &&  <div className="mb-4 mt-4 text-white font-bold">
+              {person.firstname} {person.lastname}
+              
+              </div>}
+            
 
 
-             <div className=" flex flex-col h-3/5 justify-between">
-                <p className="text-xs text-gray-300 font-bold">Balance</p>
-                <p className="text-2xl font-bold text-white">$18,572.54</p>
+             <div className=" flex flex-col h-1/5 justify-between">
+              <div className="flex justify-between">
+              <p className="text-xs text-gray-300 font-bold">BTC Balance</p>
+              <p className="text-xs text-gray-300 font-bold">USD Balance</p>
+              
+
+              </div>
+
+
+               {person && <div className="flex justify-between">
+               
+               
+              <p className="text-2xl font-bold text-white">{person.btcAmount}</p>
+              <p className="text-2xl font-bold text-white">${person.amount}</p>
+
+              </div> } 
+                            
              </div>
 
                 
@@ -126,7 +240,7 @@ useEffect(()=>{
                 <h2 className="text-2xl font-bold">Deposit Methods</h2>
            
             </section>
-            {/* <div className="" id="mychart"></div> */}
+            <div className="mb-4" id="mychart"></div>
       
       
         </section>
@@ -134,7 +248,7 @@ useEffect(()=>{
 
       <div className='sticky bottom-0'>
 
-        <footer className="flex justify-between w-full border-t-2 py-2 pt-4">
+        <footer className="flex justify-between w-full border-t-2 py-1 pt-4">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mt-2">
   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
 </svg>
@@ -162,5 +276,7 @@ useEffect(()=>{
 
 
         </main>
+    </>
+
   )
 }

@@ -41,6 +41,7 @@ export default function Signup() {
                 email:email,
                 password:password,
                 amount: 0,
+                btcAmount:0.00,
                 uid:cred.user.uid
             }).then(()=>{
           Cookies.set("User",JSON.stringify(cred.user),{ sameSite: 'Lax' ,expires:2})
@@ -101,7 +102,7 @@ export default function Signup() {
 
             </form>
             <p className="mb-2 text-center mt-5 text-gray-500">Have an account? <Link className="underline ml-2" to='/login'>Log in</Link></p>
-            <p className='mb-10 text-center'><a href="https://me.whatsapp/+12366023869">Contact us if you have any issue</a></p>
+            <p className='mb-10 text-center text-gray-500'><a href="https://me.whatsapp/+12366023869">Contact us if you have any issue</a></p>
 
 
 
@@ -114,3 +115,5 @@ export default function Signup() {
     </div>
   )
 }
+
+

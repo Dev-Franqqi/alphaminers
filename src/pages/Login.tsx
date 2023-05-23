@@ -70,7 +70,7 @@ export default function Login() {
             </form>
             <p className="mb-2 text-center mt-5 text-gray-500">don't have an account? <Link className="underline ml-2" to='/signup'>Sign up</Link></p>
 
-            <p className='mb-10 text-center'><a href="https://me.whatsapp/+12366023869">Contact us if you have any issue</a></p>
+            <p className='mb-10 text-center text-gray-500'><a href="https://me.whatsapp/+12366023869">Contact us if you have any issue</a></p>
 
 
 
