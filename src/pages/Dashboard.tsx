@@ -1,6 +1,14 @@
 // import * as CryptoCharts from "cryptocharts"
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie"
+import { signOut } from "firebase/auth";
+import { auth } from "../components/firebase";
+import { useState } from "react";
 export default function Dashboard() {
+  const navigate = useNavigate()
+  const [error,setError] = useState(false)
+  const [errmessage, setErrmessage] = useState('')
     let currentDate = new Date();
     type Options ={
         weekday:'long',
@@ -34,16 +42,48 @@ let formattedDate = currentDate.toLocaleDateString(undefined, options);
   // alert("An error occurred while generating the chart.");
 // }
 
+const logoutHandler = ()=>{
+
+  signOut(auth)
+  .then(()=>{
+    Cookies.remove("User");
+    navigate('/login')
+  })
+  .catch(err=>{
+    setError(true)
+    setErrmessage(err.message)
+  })
+
+}
+
+useEffect(()=>{
+  const check =()=>{
+    if(!Cookies.get("User")){
+        navigate('/login');
+        
+  
+      }          
+
+
+}
+  check()
+
+})
+
   return (
     <main className="bg-white flex flex-col justify-between w-screen h-screen py-4 px-2">
+           {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>}
         <section>
 
             <header className="text-gray-400 text-xs">{formattedDate}</header>
             <div className='flex w-full justify-between mb-4'>
             <h1 className="font-bold text-2xl">Account</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" onClick={handleRefresh} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-blue-500 w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={logoutHandler} className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+</svg>
+
+
+          
 
 
             </div>
@@ -98,6 +138,10 @@ let formattedDate = currentDate.toLocaleDateString(undefined, options);
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mt-2">
   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
 </svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" onClick={handleRefresh} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mt-2 w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+            </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10  font-extrabold  h-10">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
