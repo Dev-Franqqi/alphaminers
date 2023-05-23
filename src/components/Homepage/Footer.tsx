@@ -6,7 +6,7 @@ export default function Footer() {
     <div className=" md:flex md:justify-between md:mb-2">
 
 <section className="w-4/5 md:w-1/5">
-<h6 className="mt-5 md:mt-3 text-3xl font-bold mb-5">ALPHA MINERS</h6>
+<h6 className="mt-5 md:mt-3 text-3xl font-bold mb-5">ALPHA CRYPTO MINERS</h6>
 
 
 
@@ -49,7 +49,7 @@ export default function Footer() {
 
 
 
-<p className="text-center mt-3"> { String.fromCharCode(169)} ALPHA MINERS 2023 All rights reserved</p>
+<p className="text-center mt-3"> { String.fromCharCode(169)} ALPHA CRYPTO MINERS 2023 All rights reserved</p>
 </footer>
 );
 }

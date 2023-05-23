@@ -31,7 +31,7 @@ export default function Login() {
     <div className='w-full h-screen flex overflow-hidden font-sans px-10'>
         <div className='hidden md:block px-5 text-white h-full'>
 
-<motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>ALPHA MINERS</Link></motion.h1>
+<motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>Alpha Crypto Miners</Link></motion.h1>
 
 <motion.p initial={{opacity:0}}animate={{opacity:1}} className="hidden mt-2 text-sm md:block">...Scale to new heights</motion.p>
 <img src={Scalable} alt="" />
@@ -52,7 +52,7 @@ export default function Login() {
 
 
             <hr className="mt-5"/>
-            <footer className="text-center text-white md:text-black mt-1"><Link to='/'>ALPHA MINERS</Link></footer>
+            <footer className="text-center text-white md:text-black mt-1"><Link to='/'>Alpha Crypto Miners</Link></footer>
 
 
         </div>

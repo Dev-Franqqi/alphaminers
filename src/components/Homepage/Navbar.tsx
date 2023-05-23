@@ -10,7 +10,7 @@ const Navbar = () => {
 
                  <nav className="flex justify-between py-2 px-3 shadow-lg bg-black sticky top-0">
 
-                <header className="text-2xl my-auto font-extrabold text-center"><NavLink to='/'>ALPHA MINERS</NavLink></header>
+                <header className="text-2xl my-auto font-extrabold text-center"><NavLink to='/'>ALPHA CRYPTO MINERS</NavLink></header>
 
 
         <div className="hidden gap-6 md:flex md:justify-between w-2/5 ">

@@ -83,7 +83,7 @@ export default function Fourthsection() {
   
   
       <section className="text-center text-black mb-10 p-8 bg-gray-200">
-          <h5 className="text-2xl text-black font-bold mb-3">Start trading with Alpha Miners</h5>
+          <h5 className="text-2xl text-black font-bold mb-3">Start trading with ALPHA CRYPTO MINERS</h5>
   
           <h5 className="mt-2 font-bold mb-5">Fast account opening in 3 simple steps</h5>
           

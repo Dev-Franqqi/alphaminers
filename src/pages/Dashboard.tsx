@@ -1,4 +1,4 @@
-import * as CryptoCharts from "cryptocharts"
+// import * as CryptoCharts from "cryptocharts"
 
 export default function Dashboard() {
     let currentDate = new Date();
@@ -9,33 +9,39 @@ export default function Dashboard() {
     }
     let options:Options = { weekday: 'long', month: 'long', day: 'numeric' };
 
-let formattedDate = currentDate.toLocaleDateString(undefined, options);
-try{
-    CryptoCharts.roiComparison({
-      chart_id: "mychart",
-      cryptocompare_tickers: ["BTC","ETH"],
-      iconomi_tickers: ["BLX","CAR"],
-      last_days: 90,
+    //refresh 
+    const handleRefresh = ()=>{
+      window.location.reload()
       
-      })
+    }
+
+let formattedDate = currentDate.toLocaleDateString(undefined, options);
+// try{
+//     CryptoCharts.roiComparison({
+//       chart_id: "mychart",
+//       cryptocompare_tickers: ["BTC","ETH"],
+//       iconomi_tickers: ["BLX","CAR"],
+//       last_days: 90,
+      
+//       })
 
 
-}
-catch (error) {
+// }
+// catch (error) {
   
-  console.error(error);
+  // console.error(error);
  
-  alert("An error occurred while generating the chart.");
-}
+  // alert("An error occurred while generating the chart.");
+// }
 
   return (
-    <main className="bg-white flex flex-col justify-between w-screen h-screen py-4 px-8">
+    <main className="bg-white flex flex-col justify-between w-screen h-screen py-4 px-2">
         <section>
 
             <header className="text-gray-400 text-xs">{formattedDate}</header>
             <div className='flex w-full justify-between mb-4'>
             <h1 className="font-bold text-2xl">Account</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-blue-500 w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" onClick={handleRefresh} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-blue-500 w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
             </svg>
 
@@ -77,14 +83,16 @@ catch (error) {
 
 
             <section className='mt-5'>
-                <h2 className="text-2xl font-bold">Account options</h2>
+                <h2 className="text-2xl font-bold">Deposit Methods</h2>
            
-                <div className="w-fit h-fit px-4 py-1 bg-blue-500 text-white rounded-lg">Deposit</div>
             </section>
-            <div className="" id="mychart"></div>
+            {/* <div className="" id="mychart"></div> */}
       
       
         </section>
+
+
+      <div className='sticky bottom-0'>
 
         <footer className="flex justify-between w-full border-t-2 py-2 pt-4">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mt-2">
@@ -106,6 +114,8 @@ catch (error) {
 
 
         </footer>
+      </div>
+
 
         </main>
   )
