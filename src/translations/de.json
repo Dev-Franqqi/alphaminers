@@ -1,0 +1,146 @@
+{
+    "home":"Heim",
+    "market":"Markt",
+    "about":"Um",
+    "login":"anmelden",
+    "signup":"Anmeldung",
+    "start":"Beginnen Sie Ihre Handels- und Investitionsreise",
+    "startText":"Wir kaufen und verkaufen auch Bitcoins und Geschenkkarten. Genießen Sie den reibungslosen und problemlosen Handel mit ALPHA CRYPTO MINERS",
+    "putting" : "Wir stellen unsere Investoren an die erste Stelle",
+    "commited":"Wir sind bestrebt, allen unseren Anlegern einen außergewöhnlichen Service zu bieten und gleichzeitig unserem Team die beste Ausbildung zu bieten",
+    "companyName": "ALPHA CRYPTO MINERS",
+    "description": "Ein internationaler Online-Broker, der aktiv im Bereich Crypto & Stocks Trading tätig ist. Mit unserer fortschrittlichen webbasierten Handelsplattform können Sie auf der umfangreichsten Liste von Vermögenswerten der Branche handeln.",
+    "tradingPlatform": "Mit unserer fortschrittlichen webbasierten Handelsplattform können Sie auf der umfangreichsten Liste von Vermögenswerten der Branche handeln.",
+    "tradingCosts": "Halten Sie Ihre Handelskosten niedrig mit wettbewerbsfähigen Spreads, Provisionen und niedrigen Margen.",
+    "spreads": "Sehen Sie sich Spreads auf unseren beliebtesten Cash-Instrumenten an.",
+    "experience": "Erfahrung mehr als nur Handel",  
+    "investmentProcess": "Wir folgen einem sehr strengen und disziplinierten Investitionsprozess, da uns bewusst ist, dass wir mit dem Geld unserer Kunden arbeiten. Investitionen bedeuten uns viel, und wir respektieren das Vertrauen unserer Kunden.",
+    "heading": "ZUGANG ZU UNSEREN FINANZMÄRKTEN",
+    "paragraph": "Bitcoin ist das erste dezentralisierte digitale Geld. Diese Kryptowährung wurde im Jahr 2009 erstellt. Sie wurde erstmals am 31. Oktober 2008 erwähnt, als eine Person namens Satoshi Nakamoto, die als Gründer von Bitcoin gilt, einen Artikel mit dem Titel Bitcoin: Ein Peer-to-Peer-Elektronisches Bargeldsystem veröffentlichte. Bitcoin läutete eine ganz neue Ära von Kryptowährungen ein und erfreut sich bei Privathändlern und Großinvestoren großer Beliebtheit. Die führenden Handelsplätze wie die CME Group und die CBOE Global Markets haben bereits den Handel mit Bitcoin-Futures eingeführt.",
+    
+        "section1": {
+          "heading": "Wirtschaftliche",
+          "subheading": "Analyse",
+          "content": "Bleiben Sie mit führender Marktanalyse einen Schritt voraus. Halten Sie Ihre Handelskosten mit wettbewerbsfähigen Spreads, Provisionen und niedrigen Margen niedrig."
+        },
+        "section2": {
+          "heading": "Technische",
+          "subheading": "Analyse",
+          "content": "Echtzeit- und detaillierte Datenüberwachung für Trades, Aktien und Binärdateien mit klarer grafischer Darstellung. Zusätzliche Referenz für Benutzer mit Pooldaten."
+        },
+        "section3": {
+          "content": "Echtzeit- und detaillierte Datenüberwachung für Trades, Aktien und Binärdateien mit klarer grafischer Darstellung. Zusätzliche Referenz für Benutzer mit Pooldaten."
+        },
+      
+        
+            "AccountTypes": {
+              "heading": "Kontoarten",
+              "starter": {
+                "title": "STARTER",
+                "price": "1000 $/EUR",
+                "features": [
+                  "Handelsinstrumente: 36 Währungspaare, Metalle, Kryptowährungen",
+                  "Spread: Schwebend ab 1,3 Pips",
+                  "Maximaler Hebel: 1:2000",
+                  "Return on Investment: 10%",
+                  "Einzahlungsbonusse: Alle Angebote",
+                  "Treuebonusse: Alle Angebote"
+                ],
+                "button": "Plan auswählen"
+              },
+              "basic": {
+                "title": "BASIC",
+                "price": "5000 $/EUR",
+                "features": [
+                    "Handelsinstrumente: 36 Währungspaare, Metalle, CFDs auf US-Aktien, CFDs auf Indizes, CFDs auf Öl, Kryptowährungen",
+                    "Spread: Schwebend ab 1,3 Pips",
+                    "Maximaler Hebel: 1:2000",
+                    "Return on Investment: 15%",
+                    "Einzahlungsbonusse: Alle Angebote",
+                    "Treuebonusse: Alle Angebote"
+                ],
+                "button": "Plan auswählen"
+              },
+              "premium": {
+                "title": "PREMIUM",
+                "price": "10.000 $/EUR",
+                "features": [
+                  "Handelsinstrumente: 36 Währungspaare, Metalle, CFDs auf US-Aktien, CFDs auf Indizes, CFDs auf Öl, Kryptowährungen",
+                  "Spread: Schwebend ab 0 Pips",
+                  "Maximaler Hebel: 1:500",
+                  "Return on Investment: 20%",
+                  "Einzahlungsbonusse: Alle Angebote",
+                  "Treuebonusse: Alle Angebote"
+                ],
+                "button": "Plan auswählen"
+              }
+            },
+            "StartTrading": {
+              "heading": "Beginnen Sie den Handel mit ALPHA CRYPTO MINERS",
+              "subheading": "Schnelle Kontoeröffnung in 3 einfachen Schritten",
+              "steps": [
+                {
+                  "number": "1",
+                  "title": "Registrierung",
+                  "description": "Erstellen Sie noch heute ein Konto auf unserer Handelsplattform"
+                },
+                {
+                  "number": "2",
+                  "title": "Einzahlung",
+                  "description": "Füllen Sie Ihr Konto mit einer Vielzahl von Einzahlungsmethoden auf"
+                },
+                {
+                  "number": "3",
+                  "title": "Handel",
+                  "description": "Zugriff auf über 180 Instrumente aus allen Anlageklassen innerhalb der Plattform"
+                }
+              ],
+              "executionSpeed": {
+                "value": "7,12 ms",
+                "label": "DURCHSCHNITTLICHE AUSFÜHRUNGSGESCHWINDIGKEIT"
+              },
+              "liquidityProviders": {
+                "value": "12+",
+                "label": "INTEGRIERTE LIQUIDITÄTSPROVIDER"
+              },
+              "ordersPerSecond": {
+                "value": "12.000",
+                "label": "AUSGEFÜHRTE AUFTRÄGE PRO SEKUNDE"
+              },
+
+              "setup":{
+                
+                    "button": "Richten Sie Ihr Handelskonto ein",
+                    "text": "Die Registrierung dauert nur 40 Sekunden"
+                  
+                  
+              },
+
+              
+                "finSect": {
+                  "heading": "Verbinden Sie sich mit den globalen Kapitalmärkten",
+                  "par": "Handeln Sie binäre Optionen mit der besten Plattform, einer breiten Auswahl an Vermögenswerten, hohen Auszahlungen, blitzschneller Auftragsausführung und erhalten Sie persönlichen Kundensupport rund um die Uhr, schnelle Auszahlungen und das Fachwissen von Branchenführern"
+                }
+              },
+              
+                "footer": {
+                  "want": "Wir möchten, dass Sie nicht nur mit den weltweiten Finanzmärkten handeln, sondern auch mit einer einfachen und benutzerfreundlichen Online-Plattform",
+                  "features":"Merkmale",
+                  "process":"Verfahren",
+                  "indices":"Indizes",
+                  "commodities":"Rohstoffe",
+                  "rights":"Alle Rechte vorbehalten",
+                  "useful":"Nützliche Links",
+                  "contact":"Kontakt"
+
+                  
+                
+              }
+              
+              
+           
+            }
+          
+          
+      
+      

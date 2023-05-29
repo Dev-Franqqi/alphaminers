@@ -1,7 +1,8 @@
 import {motion} from 'framer-motion'
-
+import { useTranslation } from 'react-i18next'
 
 export default function Thirdcomponent() {
+  const {t} = useTranslation()
   return (
 
 <motion.div
@@ -20,12 +21,12 @@ className='mb-10'>
                     
                     <div className="ml-5">
 
-                    <h3 className="text-3xl font-bold">Economic</h3>
-                    <div className="text-xl">Analysis</div>
+                    <h3 className="text-3xl font-bold">{t('section1.heading')}</h3>
+                    <div className="text-xl">{t('section1.subheading')}</div>
                 </div>
 
                 </div>
-                <p>Stay ahead of the markets with world-leading market analysis. Keep your trading costs down with competitive spreads, commissions and low margins.</p>
+                <p>{t('section1.content')}.</p>
 
             </motion.section>
 
@@ -38,12 +39,12 @@ className='mb-10'>
                     
                     <div className="ml-5">
 
-                    <h3 className="text-3xl font-bold">Technical</h3>
-                    <div className="text-xl">Analysis</div>
+                    <h3 className="text-3xl font-bold">{t('section2.heading')}</h3>
+                    <div className="text-xl">{t('section2.subheading')}</div>
                 </div>
 
                 </div>
-       <p>Real-time and detailed data monitoring on trades, stocks and binary with clear graphical demonstration. Additional reference for users with pool data.</p>
+       <p>{t('section2.content')}.</p>
             </motion.section>
 
             </section>
@@ -55,7 +56,7 @@ className='mb-10'>
 
                 <hr />
 
-                <p className="mt-8">Real-time and detailed data monitoring on trades, stocks and binary with clear graphical demonstration. Additional reference for users with pool data.</p>
+                <p className="mt-8">{t('section3.content')}.</p>
              
 
       

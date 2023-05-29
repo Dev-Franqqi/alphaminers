@@ -1,10 +1,11 @@
-
+import { useTranslation } from "react-i18next"
 export default function Fourthsection() {
+    const {t}= useTranslation()
     return (
       
   <>
       <section  className="p-8">
-      <h5 id='market' className='text-3xl  font-bold text-center'>Account Types</h5>
+      <h5 id='market' className='text-3xl  font-bold text-center'>{t('AccountTypes.heading')}</h5>
   
   
           <div className="md:flex w-full  ">
@@ -13,39 +14,39 @@ export default function Fourthsection() {
   
       <div className="my-10 md:w-2/6 py-3 shadow-md md:flex md:flex-col gap-5 border rounded-lg text-center">
   
-      <h5 className="font-bold pl-5 my-5 ">STARTER</h5>
-              <h2 className="text-4xl font-bold">$1000/EUR </h2>
+      <h5 className="font-bold pl-5 my-5 ">{t('AccountTypes.starter.title')}</h5>
+              <h2 className="text-4xl font-bold">{t('AccountTypes.starter.price')} </h2>
           <ul className="text-sm leading-10 md:leading-10">
-              <li><span className='text-blue-500 mr-1'>✓</span>Trading Instruments: 36 currenct pairs, Metals,  Cryptocurrencies
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.0')}
               </li>
               
-              <li><span className='text-blue-500 mr-1'>✓</span>Spread: Floating from 1.3 pips</li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Maximum leverage: 1:2000</li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Return on Investment: 10%
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.1')}</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.2')}</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.3')}
                   
               </li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Deposit bonuses: All offers</li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Loyalty bonuses: All offers</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.4')}</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.4')}</li>
           </ul>
-          <button className='bg-sky-600 w-2/5 mx-auto text-white rounded px-4 py-2' >Choose Plan</button>
+          <button className='bg-sky-600 w-2/5 mx-auto text-white rounded px-4 py-2' >{t('AccountTypes.starter.button')}</button>
       </div>
   
       <div className="my-10 border text-center shadow-md rounded-lg h-fit py-3 md:w-2/6 md:mx-4">
   
-  <h5 className="font-bold my-5 ">BASIC</h5>
-  <h2 className="font-bold text-4xl my-7">$5000/EUR</h2>
+  <h5 className="font-bold my-5 ">{t('AccountTypes.basic.title')}</h5>
+  <h2 className="font-bold text-4xl my-7">{t('AccountTypes.basic.price')}</h2>
       <ul className="leading-10 text-sm md:leading-10 ">
-          <li><span className='text-blue-500 mr-1'>✓</span>Trading Instruments: 36 currenct pairs, Metals,CFD on US Stocks,CFD on Indices, CFD on Oil,Cryptocurrnecies 
+          <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.0')}
           </li>
-          <li><span className='text-blue-500 mr-1'>✓</span>Spread: Floating from 1.3 pips</li>
-          <li><span className='text-blue-500 mr-1'>✓</span>Maximum leverage: 1:2000</li>
-          <li><span className='text-blue-500 mr-1'>✓</span>Return on Investment: 15%
+          <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.1')}</li>
+          <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.2')}</li>
+          <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.3')}
               
           </li>
-          <li><span className='text-blue-500 mr-1'>✓</span>Deposit bonuses: All offers</li>
-          <li><span className='text-blue-500 mr-1'>✓</span>Loyalty bonuses: All offers</li>
+          <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.4')}</li>
+          <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.5')}</li>
       </ul>
-      <button className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' >Choose Plan</button>
+      <button className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' >{t('AccountTypes.basic.button')}</button>
   
       
   </div>
@@ -54,20 +55,20 @@ export default function Fourthsection() {
   
       <div className="my-10  md:w-2/6 shadow-md md:mx-4 py-3 rounded-lg border text-center">
   
-      <h5 className=" text-lg  font-bold pl-5 my-5 ">PREMIUM</h5>
-      <h2 className="text-4xl my-7 font-bold">$10,000/EUR</h2>
+      <h5 className=" text-lg  font-bold pl-5 my-5 ">{t('AccountTypes.premium.title')}</h5>
+      <h2 className="text-4xl my-7 font-bold">{t('AccountTypes.premium.price')}</h2>
           <ul className="leading-9 text-sm   md:leading-10">
-              <li><span className='text-blue-500 mr-1'>✓</span>Trading Instruments: 36 currenct pairs, Metals,CFD on US Stocks,CFD on Indices, CFD on Oil,Cryptocurrnecies 
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.0')} 
               </li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Spread: Floating from 0 pips</li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Maximum leverage: 1:500</li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Return on Investment: 20%
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.1')}</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.2')}</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.3')}
                   
               </li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Deposit bonuses: All offers</li>
-              <li><span className='text-blue-500 mr-1'>✓</span>Loyalty bonuses: Al  offers</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.4')}</li>
+              <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.5')}</li>
           </ul>
-          <button className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' ><a href='/dashboard'>Choose Plan</a></button>
+          <button className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' ><a href='/dashboard'>{t('AccountTypes.premium.button')}</a></button>
                    -
       </div>
       </div>
@@ -83,35 +84,35 @@ export default function Fourthsection() {
   
   
       <section className="text-center text-black mb-10 p-8 bg-gray-200">
-          <h5 className="text-2xl text-black font-bold mb-3">Start trading with ALPHA CRYPTO MINERS</h5>
+          <h5 className="text-2xl text-black font-bold mb-3">{t('StartTrading.heading')}</h5>
   
-          <h5 className="mt-2 font-bold mb-5">Fast account opening in 3 simple steps</h5>
+          <h5 className="mt-2 font-bold mb-5">{t('StartTrading.subheading')}</h5>
           
               <div className="md:flex md:justify-evenly">
   
        <div className="mb-8 md:w-1/6 leading-8">
           
-       <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">1</div>
-       <p className="font-bold">Register</p>
-        <p className="text-sm  text-gray-500 font-bold">Create an account today on our trading platform</p>
+       <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">{t('StartTrading.steps.0.number')}</div>
+       <p className="font-bold">{t('StartTrading.steps.0.title')}</p>
+        <p className="text-sm  text-gray-500 font-bold">{t('StartTrading.steps.0.description')}</p>
   
   
        </div>
   
        
        <div className="mb-8 md:w-1/6 leading-8">
-       <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">2</div>
-       <p className="font-bold">Fund</p>
-        <p className="text-sm  text-gray-500 font-bold">Fund your account using a wide range of funding methods</p>
+       <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">{t('StartTrading.steps.1.number')}</div>
+       <p className="font-bold">{t('StartTrading.steps.0.title')}</p>
+        <p className="text-sm  text-gray-500 font-bold">{t('StartTrading.steps.1.description')}</p>
   
   
        </div>
   
        
        <div className="mb-8 md:w-1/6 leading-8">
-       <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">3</div>
-       <p className="font-bold">Trade</p>
-        <p className="text-sm  text-gray-500 font-bold">Access 180+ instruments across all asset classes inside the platform</p>
+       <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">{t('StartTrading.steps.2.number')}</div>
+       <p className="font-bold">{t('StartTrading.steps.2.title')}</p>
+        <p className="text-sm  text-gray-500 font-bold">{t('StartTrading.steps.2.description')}</p>
   
   
        </div>
@@ -124,9 +125,9 @@ export default function Fourthsection() {
           <p className="flex text-3xl justify-center font-bold"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-9 h-10">
   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
   </svg>
-  7.12 ms</p>
+  {t('StartTrading.executionSpeed.value')}</p>
   
-          <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">AVERAGE ORDER EXECUTION SPEED</p>
+          <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">{t('StartTrading.executionSpeed.label')}</p>
            <hr />
   
         </div>
@@ -134,9 +135,9 @@ export default function Fourthsection() {
         <div className="mx-auto md:1/6 mt-5 ">
                   <p className="flex text-3xl justify-center font-bold">
       
-      12+</p>
+                  {t('StartTrading.liquidityProviders.value')}</p>
   
-                  <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">INTEGRATED LIQUIDITY PROVIDERS</p>
+                  <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">{t('StartTrading.liquidityProviders.label')}</p>
                   <hr />
   
         </div>
@@ -149,9 +150,9 @@ export default function Fourthsection() {
   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
   </svg>
   
-      12,000</p>
+     {t('StartTrading.ordersPerSecond.value')}</p>
   
-                  <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">EXECUTED ORDERS PER SECOND</p>
+                  <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold"> {t('StartTrading.ordersPerSecond.label')}</p>
                   <hr />
   
         </div>
@@ -164,15 +165,15 @@ export default function Fourthsection() {
   
       $545 K</p>
   
-                  <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">EXECUTED ORDERS PER SECOND</p>
+                  <p className="mt-5 mb-5 text-blue-600 text-sm font-semibold">{t('StartTrading.ordersPerSecond.label')}</p>
                   <hr />
   
         </div>
         </div>
   
   
-        <a href='/login' className="fit-content px-10  py-3 rounded text-white bg-blue-600">Setup your trading account</a>
-           <p className="text-gray-400 mt-2">Registration takes only 40 seconds!</p>
+        <a href='/login' className="fit-content px-10  py-3 rounded text-white bg-blue-600">{t('StartTrading.setup.button')}</a>
+           <p className="text-gray-400 mt-2">{t('StartTrading.setup.text')}!</p>
         
       </section>
   
@@ -182,10 +183,10 @@ export default function Fourthsection() {
   
       <section className="mt-10 text-white text-left px-5 py-10 mb-10 p-10">
   
-          <h5 className="text-3xl font-bold mb-8 md:text-center">Connect to global capital markets</h5>
+          <h5 className="text-3xl font-bold mb-8 md:text-center">{t('StartTrading.finSect.heading')}</h5>
   
   
-              <p className=" font-semibold  md:text-center">Trade Binary Options with the best platform, on a wide selection of assets, with high payouts, lightning-fast order execution and get personal customer support around the clock, fast withdrawals and the expertise of industry leaders.</p>
+              <p className=" font-semibold  md:text-center">{t('StartTrading.finSect.par')}</p>
   
       </section>
   </>

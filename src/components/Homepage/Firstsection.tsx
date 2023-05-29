@@ -1,25 +1,32 @@
-import {motion,Transition} from "framer-motion"
-export default function() {
+import { motion, Transition } from "framer-motion";
+import { useTranslation} from 'react-i18next';
+// import Language from "../Language";
+export default function () {
 
-  const transit :Transition ={
-    duration:2,
-    delay:1,
-    ease:'easeInOut'
-  }
+  const transit: Transition = {
+    duration: 2,
+    delay: 1,
+    ease: 'easeInOut'
+  };
+  const { t } = useTranslation();
+
+//   const testTranslationText = t('testTranslation');
+// console.log(testTranslationText)
+
+
+
+
   return (
-    <motion.section initial={{opacity:0}}animate={{opacity:1}} transition={transit} className="text-center  text-white pt-7 px-2">
+    <>
+    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={transit} className="text-center text-white pt-7 px-2">
+      {/* <Language /> */}
+      <h2 className="text-3xl font-bold mb-8">{t('putting')}</h2>
+      <p className="mb-5 font-semibold">{t('commited')}</p>
+      <p className="mb-10">{t('companyName')} {t('description')}. {t('tradingPlatform')}. {t('tradingCosts')}. {t('spreads')}.</p>
+      <h2 className='text-3xl font-bold mb-8'>{t('experience')}</h2>
+      <p>{t('investmentProcess')}.</p>
+    </motion.section>
+    </>
 
-    <h2 className="text-3xl font-bold mb-8">Putting our investors first is Key</h2>
-
-    <p className="mb-5 font-semibold">We are committed to providing all our investors with exceptional service while offering our team the best training</p>
-
-    <p className="mb-10 ">
-    ALPHA CRYPTO MINERS is an International online broker that has been actively operating in the Crypto & Stocks Trading trading markets. With our advanced, web-based trading platform, you can trade on the largest lists of assets in the industry. From Currency pairs, and Commodities to stocks and indices, we have it all. Keep your trading costs down with competitive spreads, commissions and low margins. View spreads on our most popular cash instruments.
-    </p>
-   <h2 className='text-3xl font-bold mb-8'>Experience more than Trading</h2> 
-<p>We follow a very strict and disciplined process for investment, as we are aware, that we are dealing with our client’s funds. Investment means a lot to us, and we respect the trust of our clients.</p>
-
-
-</motion.section>
-  )
+  );
 }

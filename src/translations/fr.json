@@ -1,0 +1,126 @@
+{
+    "home": "Accueil",
+    "market": "Marché",
+    "about": "À propos",
+    "login": "Connexion",
+    "signup": "Inscription",
+    "start": "Commencez votre voyage de trading et d'investissement",
+    "startText": "Nous achetons et vendons également des bitcoins et des cartes-cadeaux. Profitez d'un trading fluide et sans problème avec ALPHA CRYPTO MINERS",
+    "putting": "Nous plaçons nos investisseurs en premier",
+    "commited": "Nous nous engageons à offrir un service exceptionnel à tous nos investisseurs tout en fournissant la meilleure formation à notre équipe",
+    "companyName": "ALPHA CRYPTO MINERS",
+    "description": "Un courtier en ligne international actif dans le trading de crypto et d'actions. Avec notre plateforme de trading avancée basée sur le web, vous pouvez trader sur la liste d'actifs la plus complète de l'industrie.",
+    "tradingPlatform": "Avec notre plateforme de trading avancée basée sur le web, vous pouvez trader sur la liste d'actifs la plus complète de l'industrie.",
+    "tradingCosts": "Maintenez vos frais de trading bas avec des spreads compétitifs, des commissions et des marges faibles.",
+    "spreads": "Consultez les spreads sur nos instruments de trésorerie les plus populaires.",
+    "experience": "Expérience plus qu'un simple trading",
+    "investmentProcess": "Nous suivons un processus d'investissement très strict et discipliné car nous sommes conscients que nous travaillons avec l'argent de nos clients. Les investissements comptent beaucoup pour nous, et nous respectons la confiance de nos clients.",
+    "heading": "ACCÉDER À NOS MARCHÉS FINANCIERS",
+    "paragraph": "Le bitcoin est la première monnaie numérique décentralisée. Cette crypto-monnaie a été créée en 2009. Elle a été mentionnée pour la première fois le 31 octobre 2008, lorsque Satoshi Nakamoto, considéré comme le fondateur du bitcoin, a publié un article intitulé Bitcoin: A Peer-to-Peer Electronic Cash System. Le bitcoin a inauguré une toute nouvelle ère de crypto-monnaies et est très populaire parmi les traders privés et les grands investisseurs. Les principales bourses de trading telles que le groupe CME et les marchés mondiaux de la CBOE ont déjà lancé la négociation de contrats à terme sur le bitcoin.",
+    "section1": {
+      "heading": "Analyse économique",
+      "subheading": "Analyse",
+      "content": "Restez en avance d'une étape grâce à une analyse de marché de premier plan. Maintenez vos frais de trading bas avec des spreads compétitifs, des commissions et des marges faibles."
+    },
+    "section2": {
+      "heading": "Analyse technique",
+      "subheading": "Analyse",
+      "content": "Surveillance en temps réel et détaillée des données pour les transactions, les actions et les options binaires avec une représentation graphique claire. Référence supplémentaire pour les utilisateurs avec des données de pool."
+    },
+    "section3": {
+      "content": "Surveillance en temps réel et détaillée des données pour les transactions, les actions et les options binaires avec une représentation graphique claire. Référence supplémentaire pour les utilisateurs avec des données de pool."
+    },
+    "AccountTypes": {
+      "heading": "Types de compte",
+      "starter": {
+        "title": "DÉMARRAGE",
+        "price": "1000 $/EUR",
+        "features": [
+          "Instruments de trading : 36 paires de devises, métaux, crypto-monnaies",
+          "Spread : variable à partir de 1,3 pips",
+          "Effet de levier maximal : 1:2000",
+          "Retour sur investissement : 10%",
+          "Bonus de dépôt : Toutes les offres",
+          "Bonus de fidélité : Toutes les offres"
+        ],
+        "button": "Choisir le plan"
+      },
+      "basic": {
+        "title": "BASIC",
+        "price": "5000 $/EUR",
+        "features": [
+          "Instruments de trading : 36 paires de devises, métaux, CFD sur actions américaines, CFD sur indices, CFD sur pétrole, crypto-monnaies",
+          "Spread : variable à partir de 1,3 pips",
+          "Effet de levier maximal : 1:2000",
+          "Retour sur investissement : 15%",
+          "Bonus de dépôt : Toutes les offres",
+          "Bonus de fidélité : Toutes les offres"
+        ],
+        "button": "Choisir le plan"
+      },
+      "premium": {
+        "title": "PREMIUM",
+        "price": "10.000 $/EUR",
+        "features": [
+          "Instruments de trading : 36 paires de devises, métaux, CFD sur actions américaines, CFD sur indices, CFD sur pétrole, crypto-monnaies",
+          "Spread : variable à partir de 0 pips",
+          "Effet de levier maximal : 1:500",
+          "Retour sur investissement : 20%",
+          "Bonus de dépôt : Toutes les offres",
+          "Bonus de fidélité : Toutes les offres"
+        ],
+        "button": "Choisir le plan"
+      }
+    },
+    "StartTrading": {
+      "heading": "Commencez à trader avec ALPHA CRYPTO MINERS",
+      "subheading": "Ouverture rapide de compte en 3 étapes simples",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Inscription",
+          "description": "Créez un compte sur notre plateforme de trading dès aujourd'hui"
+        },
+        {
+          "number": "2",
+          "title": "Dépôt",
+          "description": "Approvisionnez votre compte avec une variété de méthodes de dépôt"
+        },
+        {
+          "number": "3",
+          "title": "Trading",
+          "description": "Accédez à plus de 180 instruments de toutes les classes d'actifs au sein de la plateforme"
+        }
+      ],
+      "executionSpeed": {
+        "value": "7,12 ms",
+        "label": "VITESSE D'EXÉCUTION MOYENNE"
+      },
+      "liquidityProviders": {
+        "value": "12+",
+        "label": "FOURNISSEURS DE LIQUIDITÉ INTÉGRÉS"
+      },
+      "ordersPerSecond": {
+        "value": "12.000",
+        "label": "ORDRES EXÉCUTÉS PAR SECONDE"
+      },
+      "setup": {
+        "button": "Configurez votre compte de trading",
+        "text": "L'inscription ne prend que 40 secondes"
+      },
+      "finSect": {
+        "heading": "Connectez-vous aux marchés financiers mondiaux",
+        "par": "Tradez des options binaires avec la meilleure plateforme, un large choix d'actifs, des rendements élevés, une exécution d'ordre ultra-rapide et bénéficiez d'une assistance client personnalisée 24h/24, de retraits rapides et des connaissances d'experts de l'industrie"
+      }
+    },
+    "footer": {
+      "want": "Nous voulons que vous tradiez non seulement sur les marchés financiers mondiaux, mais aussi sur une plateforme en ligne simple et conviviale",
+      "features": "Fonctionnalités",
+      "process": "Processus",
+      "indices": "Indices",
+      "commodities": "Matières premières",
+      "rights": "Tous droits réservés",
+      "useful": "Liens utiles",
+      "contact": "Contact"
+    }
+  }

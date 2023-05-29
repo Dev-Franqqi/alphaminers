@@ -1,6 +1,8 @@
 import { useState} from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
+    const {t} = useTranslation()
 
     const [menu,setMenu] = useState(false)
 
@@ -17,19 +19,19 @@ const Navbar = () => {
 
 
         <ul className="flex font-bold justify-between p-4 w-3/5">
-                    <li className="cursor-pointer">Home</li>
-                    <li><a href="#market">Market</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li className="cursor-pointer">{t('home')}</li>
+                    <li><a href="#market">{t('market')}</a></li>
+                    <li><a href="#about">{t('about')}</a></li>
                 </ul>
         <div className="w-48 h-4/5 px-7 my-auto  py-3 border-2 rounded border-blue-500 flex justify-between font-bold text-blue-500">
 
             
-                    <NavLink to='/login'>LOGIN</NavLink>
+                    <NavLink to='/login'>{t('login')}</NavLink>
                     <span className=" text-xl relative -top-1 text-blue-500">|
                         
                     
                         </span>
-                    <NavLink to='/signup'>SIGNUP</NavLink>
+                    <NavLink to='/signup'>{t('signup')}</NavLink>
 
                     </div>
         </div>
@@ -53,14 +55,14 @@ const Navbar = () => {
         {menu &&   <div className="leading-10 text-center backdrop-blur sticky overflow-hidden text-white top-16 text-2xl font-bold w-screen h-screen pt-8">
              <ul className="">
                 <li className="my-5">Home</li>
-                <li className="my-5"><a href="#about">About</a></li>
-                <li className="my-5"><a href="#market">Market</a></li>
+                <li className="my-5"><a href="#about">{t('about')}</a></li>
+                <li className="my-5"><a href="#market">{t('market')}</a></li>
                 {/* <li className="my-5">Commodities</li> */}
                 {/* <li className="my-5">Indices</li> */}
             </ul>
 
 
-        <NavLink to='/login'>Login</NavLink>                    
+        <NavLink to='/login'>{t('login')}</NavLink>                    
          </div>  }
       
         

@@ -1,0 +1,139 @@
+{
+    "home": "Home",
+    "market": "Market",
+    "about": "About",
+    "login": "Login",
+    "signup": "Signup",
+    "start": "Begin Your Trading and Investment Journey",
+    "startText": "We also buy and sell bitcoins and gift cards. Enjoy smooth and hassle-free trading with ALPHA CRYPTO MINERS.",
+    "putting": "We put our investors first",
+    "commited": "We are committed to providing exceptional service to all our investors while providing the best education to our team.",
+    "companyName": "ALPHA CRYPTO MINERS",
+    "description": "An international online broker actively involved in Crypto & Stocks Trading. With our advanced web-based trading platform, you can trade on the most comprehensive list of assets in the industry.",
+    "tradingPlatform": "Trade on the most comprehensive list of assets in the industry with our advanced web-based trading platform.",
+    "tradingCosts": "Keep your trading costs low with competitive spreads, commissions, and low margins.",
+    "spreads": "Check out spreads on our most popular cash instruments.",
+    "experience": "Experience more than just trading.",
+    "investmentProcess": "We follow a very strict and disciplined investment process because we understand that we are working with our customers' money. Investments mean a lot to us, and we respect the trust of our customers.",
+    "heading": "ACCESS OUR FINANCIAL MARKETS",
+    "paragraph": "Bitcoin is the first decentralized digital currency. This cryptocurrency was created in 2009. It was first mentioned on October 31, 2008, when a person named Satoshi Nakamoto, who is considered the founder of Bitcoin, published a paper titled Bitcoin: A Peer-to-Peer Electronic Cash System. Bitcoin ushered in an entirely new era of cryptocurrencies and has gained popularity among individual traders and large investors. Leading trading venues such as the CME Group and CBOE Global Markets have already introduced trading in Bitcoin futures.",
+    
+   
+    "section1": {
+        "heading": "Economic",
+        "subheading": "Analysis",
+        "content": "Stay one step ahead with leading market analysis. Keep your trading costs low with competitive spreads, commissions, and low margins."
+    },
+    "section2": {
+        "heading": "Technical",
+        "subheading": "Analysis",
+        "content": "Real-time and detailed data monitoring for trades, stocks, and binaries with clear graphical representation. Additional reference for users with pool data."
+    },
+    "section3": {
+        "content": "Real-time and detailed data monitoring for trades, stocks, and binaries with clear graphical representation. Additional reference for users with pool data."
+    },
+    
+    
+    "AccountTypes": {
+        "heading": "Account Types",
+        "starter": {
+            "title": "STARTER",
+            "price": "1000 $/EUR",
+            "features": [
+                "Trading Instruments: 36 currency pairs, metals, cryptocurrencies",
+                "Spread: Floating from 1.3 pips",
+                "Maximum Leverage: 1:2000",
+                "Return on Investment: 10%",
+                "Deposit Bonuses: All Offers",
+                "Loyalty Bonuses: All Offers"
+            ],
+            "button": "Choose Plan"
+        },
+        "basic": {
+            "title": "BASIC",
+            "price": "5000 $/EUR",
+            "features": [
+                "Trading Instruments: 36 currency pairs, metals, CFDs on US stocks, CFDs on indices, CFDs on oil, cryptocurrencies",
+                "Spread: Floating from 1.3 pips",
+                "Maximum Leverage: 1:2000",
+                "Return on Investment: 15%",
+                "Deposit Bonuses: All Offers",
+                "Loyalty Bonuses: All Offers"
+            ],
+            "button": "Choose Plan"
+        },
+        "premium": {
+            "title": "PREMIUM",
+            "price": "10,000 $/EUR",
+            "features": [
+                "Trading Instruments: 36 currency pairs, metals, CFDs on US stocks, CFDs on indices, CFDs on oil, cryptocurrencies",
+                "Spread: Floating from 0 pips",
+                "Maximum Leverage: 1:500",
+                "Return on Investment: 20%",
+                "Deposit Bonuses: All Offers",
+                "Loyalty Bonuses: All Offers"
+            ],
+            "button": "Choose Plan"
+        }
+    },
+    "StartTrading": {
+        "heading": "Start Trading with ALPHA CRYPTO MINERS",
+        "subheading": "Fast Account Opening in 3 Easy Steps",
+        "steps": [
+            {
+                "number": "1",
+                "title": "Registration",
+                "description": "Create an account on our trading platform today"
+            },
+            {
+                "number": "2",
+                "title": "Deposit",
+                "description": "Fund your account with a variety of deposit methods"
+            },
+            {
+                "number": "3",
+                "title": "Trade",
+                "description": "Access over 180 instruments across all asset classes within the platform"
+            }
+        ],
+        "executionSpeed": {
+            "value": "7.12 ms",
+            "label": "AVERAGE EXECUTION SPEED"
+        },
+        "liquidityProviders": {
+            "value": "12+",
+            "label": "INTEGRATED LIQUIDITY PROVIDERS"
+        },
+        "ordersPerSecond": {
+            "value": "12,000",
+            "label": "ORDERS EXECUTED PER SECOND"
+        },
+    
+        "setup": {
+    
+            "button": "Set Up Your Trading Account",
+            "text": "Registration takes only 40 seconds"
+    
+    
+        },
+    
+    
+        "finSect": {
+            "heading": "Connect with Global Capital Markets",
+            "par": "Trade binary options with the best platform, a wide selection of assets, high payouts, lightning-fast order execution, and get personalized customer support around the clock, fast withdrawals, and the expertise of industry leaders."
+        }
+    },
+    
+    "footer": {
+        "want": "We want you to not only trade with global financial markets but also with a simple and user-friendly online platform.",
+        "features": "Features",
+        "process": "Process",
+        "indices": "Indices",
+        "commodities": "Commodities",
+        "rights": "All Rights Reserved",
+        "useful": "Useful Links",
+        "contact": "Contact"
+    
+    
+    }
+    }

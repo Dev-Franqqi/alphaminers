@@ -1,0 +1,126 @@
+{
+    "home": "Inicio",
+    "market": "Mercado",
+    "about": "Acerca de",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "start": "Comienza tu viaje de trading e inversión",
+    "startText": "También compramos y vendemos bitcoins y tarjetas de regalo. Disfruta de un trading suave y sin problemas con ALPHA CRYPTO MINERS",
+    "putting": "Colocamos a nuestros inversores en primer lugar",
+    "commited": "Nos comprometemos a brindar un servicio excepcional a todos nuestros inversores y a proporcionar la mejor educación a nuestro equipo",
+    "companyName": "ALPHA CRYPTO MINERS",
+    "description": "Un bróker en línea internacional que se dedica activamente al trading de criptomonedas y acciones. Con nuestra plataforma de trading basada en web avanzada, puedes operar en la lista más completa de activos de la industria.",
+    "tradingPlatform": "Con nuestra plataforma de trading basada en web avanzada, puedes operar en la lista más completa de activos de la industria.",
+    "tradingCosts": "Mantén tus costos de trading bajos con spreads competitivos, comisiones bajas y márgenes reducidos.",
+    "spreads": "Consulta los spreads en nuestros instrumentos de efectivo más populares.",
+    "experience": "Experimenta más que solo trading",
+    "investmentProcess": "Seguimos un proceso de inversión riguroso y disciplinado porque somos conscientes de que estamos trabajando con el dinero de nuestros clientes. Las inversiones significan mucho para nosotros y respetamos la confianza de nuestros clientes.",
+    "heading": "ACCESO A NUESTROS MERCADOS FINANCIEROS",
+    "paragraph": "Bitcoin es la primera moneda digital descentralizada. Esta criptomoneda fue creada en 2009. Se mencionó por primera vez el 31 de octubre de 2008, cuando una persona llamada Satoshi Nakamoto, considerada el fundador de Bitcoin, publicó un artículo titulado Bitcoin: Un sistema de efectivo electrónico de igual a igual. Bitcoin marcó una nueva era de las criptomonedas y ha ganado mucha popularidad entre los traders minoristas y los grandes inversionistas. Los principales mercados de trading como CME Group y CBOE Global Markets ya han introducido futuros de Bitcoin.",
+    "section1": {
+      "heading": "Análisis",
+      "subheading": "Económico",
+      "content": "Mantente un paso adelante con análisis de mercado líderes. Mantén tus costos de trading bajos con spreads competitivos, comisiones bajas y márgenes reducidos."
+    },
+    "section2": {
+      "heading": "Análisis",
+      "subheading": "Técnico",
+      "content": "Monitoreo de datos en tiempo real y detallado para operaciones, acciones y opciones binarias con representación gráfica clara. Referencia adicional para usuarios con datos de grupo."
+    },
+    "section3": {
+      "content": "Monitoreo de datos en tiempo real y detallado para operaciones, acciones y opciones binarias con representación gráfica clara. Referencia adicional para usuarios con datos de grupo."
+    },
+    "AccountTypes": {
+      "heading": "Tipos de cuenta",
+      "starter": {
+  
+  
+        "title": "BÁSICA",
+        "price": "1000 $/EUR",
+        "features": [
+          "Instrumentos de trading: 36 pares de divisas, metales, criptomonedas",
+          "Spread: Flotante a partir de 1,3 pips",
+          "Apalancamiento máximo: 1:2000",
+          "Retorno de inversión: 10%",
+          "Bonos de depósito: Todas las ofertas",
+          "Bonos de lealtad: Todas las ofertas"
+        ],
+        "button": "Seleccionar plan"
+      },
+      "basic": {
+        "title": "BÁSICA",
+        "price": "5000 $/EUR",
+        "features": [
+          "Instrumentos de trading: 36 pares de divisas, metales, CFDs de acciones estadounidenses, CFDs de índices, CFDs de petróleo, criptomonedas",
+          "Spread: Flotante a partir de 1,3 pips",
+          "Apalancamiento máximo: 1:2000",
+          "Retorno de inversión: 15%",
+          "Bonos de depósito: Todas las ofertas",
+          "Bonos de lealtad: Todas las ofertas"
+        ],
+        "button": "Seleccionar plan"
+      },
+      "premium": {
+        "title": "PREMIUM",
+        "price": "10.000 $/EUR",
+        "features": [
+          "Instrumentos de trading: 36 pares de divisas, metales, CFDs de acciones estadounidenses, CFDs de índices, CFDs de petróleo, criptomonedas",
+          "Spread: Flotante a partir de 0 pips",
+          "Apalancamiento máximo: 1:500",
+          "Retorno de inversión: 20%",
+          "Bonos de depósito: Todas las ofertas",
+          "Bonos de lealtad: Todas las ofertas"
+        ],
+        "button": "Seleccionar plan"
+      }
+    },
+    "StartTrading": {
+      "heading": "Comienza a operar con ALPHA CRYPTO MINERS",
+      "subheading": "Apertura de cuenta rápida en 3 sencillos pasos",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Registro",
+          "description": "Crea una cuenta en nuestra plataforma de trading hoy mismo"
+        },
+        {
+          "number": "2",
+          "title": "Depósito",
+          "description": "Fondea tu cuenta con una variedad de métodos de depósito"
+        },
+        {
+          "number": "3",
+          "title": "Trading",
+          "description": "Accede a más de 180 instrumentos de todas las clases de activos dentro de la plataforma"
+        }
+      ],
+      "executionSpeed": {
+        "value": "7,12 ms",
+        "label": "VELOCIDAD DE EJECUCIÓN PROMEDIO"
+      },
+      "liquidityProviders": {
+        "value": "12+",
+        "label": "PROVEEDORES DE LIQUIDEZ INTEGRADOS"
+      },
+      "ordersPerSecond": {
+        "value": "12.000",
+        "label": "ÓRDENES EJECUTADAS POR SEGUNDO"
+      },
+      "setup": {
+        "button": "Configura tu cuenta de trading",
+        "text": "El registro solo lleva 2 minutos y no se requiere verificación adicional"
+      }
+    },
+    
+        "footer": {
+          "want": "Queremos que no solo operes en los mercados financieros globales, sino también en una plataforma en línea simple y amigable",
+          "features": "Características",
+          "process": "Proceso",
+          "indices": "Índices",
+          "commodities": "Materias primas",
+          "rights": "Todos los derechos reservados",
+          "useful": "Enlaces útiles",
+          "contact": "Contacto"
+        }
+      
+  }
