@@ -163,17 +163,17 @@ useEffect(()=>{
 
     <>
 
-    <main className="bg-white flex flex-col justify-between w-screen h-screen py-4 px-2">
+    <main className="bg-blue-900 flex flex-col justify-between w-screen h-screen py-4 px-2">
       
     
           
            {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>}
-        <section>
+        <section className="w-full">
 
-            <header className="text-gray-400 text-xs">{formattedDate}</header>
+            <header className="text-white text-xs">{formattedDate}</header>
             <div className='flex w-full justify-between mb-4'>
-            <h1 className="font-bold text-2xl">Account</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={logoutHandler} className="w-6 h-6">
+            <h1 className="font-bold text-2xl text-white">ACCOUNT</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={logoutHandler} className="w-6 text-white h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
 </svg>
 
@@ -183,10 +183,12 @@ useEffect(()=>{
 
             </div>
             <hr />
-            <section className="w-full shadow-lg  border p-4 h-56 mt-10 rounded-lg bg-blue-500">
+            <div className="w-full flex flex-col md:flex-row md:justify-between">
+
+           
+            <section className="w-full shadow-lg  border p-4 h-56 mt-10 rounded-lg text-black md:w-3/5 bg-white">
              
              <div className="flex justify-between mb-5">
-                   
 
 
         <div className="flex">     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 bg-white rounded-full">
@@ -194,19 +196,19 @@ useEffect(()=>{
 </svg>
                 <div className="ml-2">
                     
-                   {user && <h3 className="text-white">{person?.email}</h3> } 
+                   {user && <h3 className="">{person?.email}</h3> } 
                     <p className="text-gray-300 text-xs">Personal</p>
                 </div>
                 
              </div>
 
-             <div className="bg-white text-xs h-fit py-1 text-blue-500 w-fit px-2 rounded">
+             <div className="bg-white text-xs h-fit py-1 border-black border-3 text-blue-500 w-fit px-2 rounded">
                     USD
                 </div>
              </div>
 
              <hr />
-            {person &&  <div className="mb-4 mt-4 text-white font-bold">
+            {person &&  <div className="mb-4 mt-4  font-bold">
               {person.firstname} {person.lastname}
               
               </div>}
@@ -225,8 +227,8 @@ useEffect(()=>{
                {person && <div className="flex justify-between">
                
                
-              <p className="text-2xl font-bold text-white">{person.btcAmount}</p>
-              <p className="text-2xl font-bold text-white">${person.amount}</p>
+              <p className="text-2xl font-bold ">{person.btcAmount}</p>
+              <p className="text-2xl font-bold ">${person.amount}</p>
 
               </div> } 
                             
@@ -234,10 +236,27 @@ useEffect(()=>{
 
                 
             </section>
+            <section className=" w-full md:w-2/6 rounded py-1 px-1 mt-10 h-64 flex justify-between flex-col">
+              <h2 className="font-bold text-white text-2xl">DEPOSIT METHODS</h2>
+
+              <div className="w-full border-2 self-center pt-5  rounded-md text-center bg-blue-400 text-white h-16">
+                <h4>BITCOIN</h4>
+              </div>
+              <div className="w-full border self-center pt-5 rounded-md text-center h-16">
+              <h4>BITCOIN</h4>
+
+              </div>
+              <div className="w-full border self-center pt-5 text-center rounded-md h-16">
+              <h4>BITCOIN</h4>
+
+              </div>
+
+            </section>
+            </div>
 
 
             <section className='mt-5'>
-                <h2 className="text-2xl font-bold">Deposit Methods</h2>
+                <h2 className="text-2xl font-bold text-white">CHARTS</h2>
            
             </section>
             <div className="mb-4" id="mychart"></div>
@@ -248,7 +267,7 @@ useEffect(()=>{
 
       <div className='sticky bottom-0'>
 
-        <footer className="flex justify-between w-full border-t-2 py-1 pt-4">
+        <footer className="flex justify-between w-full bg-white border-t-2 py-1 pt-4">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mt-2">
   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
 </svg>
