@@ -182,7 +182,7 @@ useEffect(()=>{
       <div className={`bg-white rounded-md text-sm py-2 md:w-2/5 px-1 mb-2 ${hide}`}>
       <svg onClick={()=>setHide('hidden')} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 mb-1 text-red-700 font-bold">
   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-</svg>{t('dashboard.infoOne')} <Link to='https://wa.me/+12366023869' className='underline'>{t('dashboard.infoTwo')}manager</Link> </div>
+</svg>{t('dashboard.infoOne')} <Link to='https://wa.me/+12366023869' className='underline'>{t('dashboard.infoTwo')}</Link> </div>
     
           
            {/* {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>} */}
