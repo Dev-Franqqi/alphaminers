@@ -133,7 +133,8 @@
           "email": "e-posta",
           "pasword": "şifre",
           "dont": "Hesabınız yok mu?",
-          "contact": "Herhangi bir sorunuz varsa bize ulaşın"
+          "contact": "Bize ulaşın"
+
       },
       "Signup": {
           "scale": "Yeni zirvelere çıkın",
@@ -142,14 +143,25 @@
           "email": "e-posta",
           "pasword": "şifre",
           "have": "Zaten bir hesabınız var mı?",
-          "contact": "Herhangi bir sorunuz varsa bize ulaşın"
+          "contact": "Bize ulaşın"
+
       },
       "dashboard": {
           "account": "HESAP",
           "personal": "Kişisel",
           "btcBal": "BTC Bakiyesi",
           "usBal": "USD Bakiyesi",
-          "charts": "GRAFİKLER"
+          "charts": "GRAFİKLER",
+          
+            "infoOne": "Yatırma ve Çekme İşlemleri İçin, ",
+            "infoTwo": "Hesap Yöneticinize Başvurun",
+            "homepage": "Ana Sayfa",
+            "deposit": "Yatırım",
+            "withdrawal": "Çekim",
+            "customerSup": "Müşteri Destek",
+            "logOut": "Çıkış Yap"
+          
+          
       }
       }
 

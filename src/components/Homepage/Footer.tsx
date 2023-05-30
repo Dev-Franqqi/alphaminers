@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export default function Footer() {
     const {t} = useTranslation()
   return (
-    <footer className=" bg-blue-900 px-5 py-10 text-white leading-8">
+    <footer id='about' className=" bg-blue-900 px-5 py-10 text-white leading-8">
 
     <div className=" md:flex md:justify-between md:mb-2">
 

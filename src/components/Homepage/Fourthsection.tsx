@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 export default function Fourthsection() {
     const {t}= useTranslation()
     return (
@@ -28,7 +29,7 @@ export default function Fourthsection() {
               <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.4')}</li>
               <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.starter.features.4')}</li>
           </ul>
-          <button className='bg-sky-600 w-2/5 mx-auto text-white rounded px-4 py-2' >{t('AccountTypes.starter.button')}</button>
+          <Link to='/signup' className='bg-sky-600 w-2/5 mx-auto text-white rounded px-4 py-2' >{t('AccountTypes.starter.button')}</Link>
       </div>
   
       <div className="my-10 border text-center shadow-md rounded-lg h-fit py-3 md:w-2/6 md:mx-4">
@@ -46,7 +47,7 @@ export default function Fourthsection() {
           <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.4')}</li>
           <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.basic.features.5')}</li>
       </ul>
-      <button className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' >{t('AccountTypes.basic.button')}</button>
+      <Link to='/signup'  className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' >{t('AccountTypes.basic.button')}</Link>
   
       
   </div>
@@ -68,7 +69,7 @@ export default function Fourthsection() {
               <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.4')}</li>
               <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.5')}</li>
           </ul>
-          <button className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' ><a href='/dashboard'>{t('AccountTypes.premium.button')}</a></button>
+          <Link to='/signup' className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' ><a href='/dashboard'>{t('AccountTypes.premium.button')}</a></Link>
                    -
       </div>
       </div>

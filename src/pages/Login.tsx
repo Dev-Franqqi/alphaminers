@@ -72,7 +72,7 @@ export default function Login() {
             </form>
             <p className="mb-2 text-center mt-5 text-gray-500">don't have an account? <Link className="underline ml-2" to='/signup'>{t('signup')}</Link></p>
 
-            <p className='mb-10 text-center text-gray-500'><a href="https://me.whatsapp/+12366023869">{t('Login.contact')}</a></p>
+            <p className='mb-10 text-center underline text-gray-500'><a href="https://me.whatsapp/+12366023869">{t('Login.contact')}</a></p>
 
 
 

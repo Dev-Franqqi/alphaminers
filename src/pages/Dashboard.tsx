@@ -10,6 +10,9 @@ import { collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { db } from "../components/firebase";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import Language from "../components/Language"
+
 type B ={
   uid: string,
  email: string,
@@ -51,6 +54,13 @@ export default function Dashboard() {
   // const [error,setError] = useState(false)
   // const [errmessage, setErrmessage] = useState('')
   const [person,setPerson] = useState<undefined|Person>()
+  const [menu,setMenu] = useState(false)
+  const [isSlideVisible, setIsSlideVisible] = useState(false);
+  const [hide,setHide] = useState('')
+  const toggleSlide = () => {
+    setMenu(!menu)
+    setIsSlideVisible(!isSlideVisible);
+  };
 
   
   
@@ -98,7 +108,7 @@ uid:'',
 password:'',
 btcAmount:0
 }
-console.log(x)
+
 
 const logoutHandler = ()=>{
 
@@ -143,7 +153,7 @@ useEffect(()=>{
     .then((snapshot) => {
         // Handle query results
     const inf:Person=snapshot.docs[0].data() as Person
-    console.log(inf)
+
     setPerson(inf)
     
     })
@@ -163,30 +173,65 @@ useEffect(()=>{
 
 },[person])
 
+
   return (
 
-    <>
+    <>  
 
-    <main className="bg-blue-900 flex flex-col justify-between w-screen h-screen py-4 px-2">
-      
+    <main className=" relative bg-blue-900 flex flex-col justify-between w-full h-full py-4 px-2">
+      <div className={`bg-white rounded-md text-sm py-2 md:w-2/5 px-1 mb-2 ${hide}`}>
+      <svg onClick={()=>setHide('hidden')} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 mb-1 text-red-700 font-bold">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>{t('dashboard.infoOne')} <Link to='https://wa.me/+12366023869' className='underline'>{t('dashboard.infoTwo')}manager</Link> </div>
     
           
            {/* {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>} */}
-        <section className="w-full">
+        <section className="w-full px-2">
 
             <header className="text-white text-xs">{formattedDate}</header>
             <div className='flex w-full justify-between mb-4'>
             <h1 className="font-bold text-2xl text-white">ACCOUNT</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={logoutHandler} className="w-6 text-white h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+
+            {!menu &&    <svg onClick={toggleSlide } xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="font-bold text-white w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+</svg> }
+{menu && <svg onClick={toggleSlide} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white font-bold">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
 </svg>
+ }
+         
+
 
 
           
 
 
             </div>
-            <hr />
+        
+
+          
+
+
+            <hr className='mb-1'/>
+            {isSlideVisible && 
+        <div className="text-sm flex flex-col rounded-md mt-1 justify-center  items-center py-3 bg-white">
+
+
+        <Link to='/' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.homepage')}</Link>
+
+        <Link to='https://wa.me/+12366023869' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.deposit')}</Link>
+
+        <Link to='https://wa.me/+12366023869' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.withdrawal')}</Link>
+        <Link to='https://wa.me/+12366023869' className="w-4/5 text-center  rounded-md mb-2 py-1 border">{t('dashboard.customerSup')}</Link>
+
+        <div onClick={logoutHandler} className="w-4/5 mb-3 text-center  rounded-md py-1 border">{t('dashboard.logOut')}</div>
+
+        </div>
+
+      }
+
+        <Language />
+          
             <div className="w-full flex flex-col md:flex-row md:justify-between">
 
            
@@ -263,7 +308,7 @@ useEffect(()=>{
                 <h2 className="text-2xl font-bold text-white">{t('dashboard.charts')}</h2>
            
             </section>
-            <div className="mb-4" id="mychart"></div>
+            <div className="mb-4 z-0" id="mychart"></div>
       
       
         </section>

@@ -141,7 +141,7 @@
                 "email": "email",
                 "pasword": "mot de passe",
                 "dont": "Vous n'avez pas de compte?",
-                "contact": "Contactez-nous si vous avez un problème"
+                "contact": "Kontaktieren Sie uns"
             },
             "Signup": {
                 "scale": "Atteindre de nouveaux sommets",
@@ -150,14 +150,24 @@
                 "email": "email",
                 "pasword": "mot de passe",
                 "have": "Vous avez déjà un compte?",
-                "contact": "Contactez-nous si vous avez un problème"
+                "contact": "Kontaktieren Sie uns"
             },
             "dashboard": {
                 "account": "COMPTE",
                 "personal": "Personnel",
                 "btcBal": "Solde BTC",
                 "usBal": "Solde USD",
-                "charts": "GRAPHIQUES"
+                "charts": "GRAPHIQUES",
+                
+                  "infoOne": "Für Einzahlungen und Auszahlungen, ",
+                  "infoTwo": "Kontaktieren Sie Ihren Account Manager",
+                  "homepage": "Startseite",
+                  "deposit": "Einzahlung",
+                  "withdrawal": "Auszahlung",
+                  "customerSup": "Kundensupport",
+                  "logOut": "Abmelden"
+                
+                
             }
               
               

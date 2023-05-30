@@ -143,7 +143,7 @@
         "email":"email",
         "pasword":"password",
         "dont":"dont have an account?",
-        "contact":"Contact us if you have any issue"
+        "contact":"Contact us"
 
     },
 
@@ -154,7 +154,7 @@
         "email":"email",
         "pasword":"password",
         "have":"Have an account?",
-        "contact":"Contact us if you have any issue"
+        "contact":"Contact us"
         
 
 
@@ -165,7 +165,16 @@
         "personal":"Personal",
         "btcBal":"BTC Balance",
         "usBal":"USD Balance",
-        "charts":"CHARTS"
+        "charts":"CHARTS",
+        "infoOne":"For Deposits and Withdrawals, ",
+          "infoTwo":"Contact your Account Manager",
+          "homepage":"Homepage",
+          "deposit":"Deposit",
+          "withdrawal":"Withdrawal",
+          "customerSup":"Customer Support",
+          "logOut":"Log out"
+
+
     }
 
 

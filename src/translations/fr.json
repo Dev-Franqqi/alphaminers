@@ -128,7 +128,7 @@
       "email": "email",
       "pasword": "mot de passe",
       "dont": "Vous n'avez pas de compte?",
-      "contact": "Contactez-nous si vous avez un problème"
+      "contact": "Contactez-nous"
   },
   "Signup": {
       "scale": "Atteindre de nouveaux sommets",
@@ -137,13 +137,23 @@
       "email": "email",
       "pasword": "mot de passe",
       "have": "Vous avez déjà un compte?",
-      "contact": "Contactez-nous si vous avez un problème"
+      "contact": "Contactez-nous"
   },
   "dashboard": {
       "account": "COMPTE",
       "personal": "Personnel",
       "btcBal": "Solde BTC",
       "usBal": "Solde USD",
-      "charts": "GRAPHIQUES"
+      "charts": "GRAPHIQUES",
+      
+        "infoOne": "Pour les dépôts et les retraits, ",
+        "infoTwo": "Contactez votre gestionnaire de compte",
+        "homepage": "Accueil",
+        "deposit": "Dépôt",
+        "withdrawal": "Retrait",
+        "customerSup": "Support client",
+        "logOut": "Déconnexion"
+      
+      
   }
   }

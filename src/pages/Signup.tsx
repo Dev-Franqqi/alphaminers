@@ -102,13 +102,13 @@ export default function Signup() {
                 <button type='submit' className='w-4/5 h-10 bg-blue-800 mx-auto text-center py-1 shadow-lg rounded text-white'>Submit</button>
 
             </form>
-            <p className="mb-2 text-center mt-5 text-gray-500">Have an account? <Link className="underline ml-2" to='/login'>{t('signup')}</Link></p>
-            <p className='mb-10 text-center text-gray-500'><a href="https://me.whatsapp/+12366023869">{t('Signup.contact')}</a></p>
+            <p className="mb-2 text-center mt-5 text-gray-500">Have an account? <Link className="underline ml-2" to='/login'>{t('login')}</Link></p>
+            <p className='mb-10 text-center underline text-gray-500'><a href="https://me.whatsapp/+12366023869">{t('Signup.contact')}</a></p>
 
 
 
             <hr className="mt-5"/>
-            <footer className="text-center text-white md:text-black mt-1"><Link to='/'>ALPHA CRYPTO MINERS</Link></footer>
+            <footer className="text-center text-white mb-2 md:text-black mt-1"><Link to='/'>ALPHA CRYPTO MINERS</Link></footer>
 
 
         </div>
