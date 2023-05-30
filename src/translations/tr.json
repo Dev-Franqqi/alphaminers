@@ -127,6 +127,29 @@
           "rights": "Tüm hakları saklıdır",
           "useful": "Faydalı Bağlantılar",
           "contact": "İletişim"
-        }
+        },
+        "Login": {
+          "scale": "Yeni zirvelere çıkın",
+          "email": "e-posta",
+          "pasword": "şifre",
+          "dont": "Hesabınız yok mu?",
+          "contact": "Herhangi bir sorunuz varsa bize ulaşın"
+      },
+      "Signup": {
+          "scale": "Yeni zirvelere çıkın",
+          "firstname": "ad",
+          "lastname": "soyad",
+          "email": "e-posta",
+          "pasword": "şifre",
+          "have": "Zaten bir hesabınız var mı?",
+          "contact": "Herhangi bir sorunuz varsa bize ulaşın"
+      },
+      "dashboard": {
+          "account": "HESAP",
+          "personal": "Kişisel",
+          "btcBal": "BTC Bakiyesi",
+          "usBal": "USD Bakiyesi",
+          "charts": "GRAFİKLER"
+      }
       }
 

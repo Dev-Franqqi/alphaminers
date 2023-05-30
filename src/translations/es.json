@@ -121,6 +121,29 @@
           "rights": "Todos los derechos reservados",
           "useful": "Enlaces útiles",
           "contact": "Contacto"
-        }
+        },
+        "Login": {
+          "scale": "Alcanza nuevas alturas",
+          "email": "correo electrónico",
+          "pasword": "contraseña",
+          "dont": "¿No tienes una cuenta?",
+          "contact": "Contáctanos si tienes algún problema"
+      },
+      "Signup": {
+          "scale": "Alcanza nuevas alturas",
+          "firstname": "nombre",
+          "lastname": "apellido",
+          "email": "correo electrónico",
+          "pasword": "contraseña",
+          "have": "¿Ya tienes una cuenta?",
+          "contact": "Contáctanos si tienes algún problema"
+      },
+      "dashboard": {
+          "account": "CUENTA",
+          "personal": "Personal",
+          "btcBal": "Saldo BTC",
+          "usBal": "Saldo USD",
+          "charts": "GRÁFICOS"
+      }
       
   }

@@ -9,6 +9,7 @@ import { query,where } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { db } from "../components/firebase";
+import { useTranslation } from "react-i18next";
 type B ={
   uid: string,
  email: string,
@@ -44,11 +45,13 @@ interface Person{
 }
 
 export default function Dashboard() {
+  const {t} = useTranslation()
   const navigate = useNavigate()
   const [user,setUser] = useState<Object|undefined>()
-  const [error,setError] = useState(false)
-  const [errmessage, setErrmessage] = useState('')
+  // const [error,setError] = useState(false)
+  // const [errmessage, setErrmessage] = useState('')
   const [person,setPerson] = useState<undefined|Person>()
+
   
   
 
@@ -62,10 +65,10 @@ export default function Dashboard() {
     let options:Options = { weekday: 'long', month: 'long', day: 'numeric' };
 
     //refresh 
-    const handleRefresh = ()=>{
-      window.location.reload()
+    // const handleRefresh = ()=>{
+    //   window.location.reload()
       
-    }
+    // }
 
 let formattedDate = currentDate.toLocaleDateString(undefined, options);
 try{
@@ -105,8 +108,9 @@ const logoutHandler = ()=>{
     navigate('/login')
   })
   .catch(err=>{
-    setError(true)
-    setErrmessage(err.message)
+    console.log(err)
+    // setError(true)
+    // setErrmessage(err.message)
   })
 
 }
@@ -145,13 +149,13 @@ useEffect(()=>{
     })
 
     .catch((error) => {
+      console.log(error)
         // Handle error
-        setError(true)
-        setErrmessage(error.message)
+        // setError(true)
+        // setErrmessage(error.message)
     });
   
-  console.log(user)
-
+  
 
   
 
@@ -167,7 +171,7 @@ useEffect(()=>{
       
     
           
-           {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>}
+           {/* {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>} */}
         <section className="w-full">
 
             <header className="text-white text-xs">{formattedDate}</header>
@@ -197,7 +201,7 @@ useEffect(()=>{
                 <div className="ml-2">
                     
                    {user && <h3 className="">{person?.email}</h3> } 
-                    <p className="text-gray-300 text-xs">Personal</p>
+                    <p className="text-gray-300 text-xs">{t('dashboard.personal')}</p>
                 </div>
                 
              </div>
@@ -217,8 +221,8 @@ useEffect(()=>{
 
              <div className=" flex flex-col h-1/5 justify-between">
               <div className="flex justify-between">
-              <p className="text-xs text-gray-300 font-bold">BTC Balance</p>
-              <p className="text-xs text-gray-300 font-bold">USD Balance</p>
+              <p className="text-xs text-gray-300 font-bold">{t('dashboard.btcBal')}</p>
+              <p className="text-xs text-gray-300 font-bold">{t('dashboard.usBal')}</p>
               
 
               </div>
@@ -236,7 +240,7 @@ useEffect(()=>{
 
                 
             </section>
-            <section className=" w-full md:w-2/6 rounded py-1 px-1 mt-10 h-64 flex justify-between flex-col">
+            {/* <section className=" w-full md:w-2/6 rounded py-1 px-1 mt-10 h-64 flex justify-between flex-col">
               <h2 className="font-bold text-white text-2xl">DEPOSIT METHODS</h2>
 
               <div className="w-full border-2 self-center pt-5  rounded-md text-center bg-blue-400 text-white h-16">
@@ -251,12 +255,12 @@ useEffect(()=>{
 
               </div>
 
-            </section>
+            </section> */}
             </div>
 
 
             <section className='mt-5'>
-                <h2 className="text-2xl font-bold text-white">CHARTS</h2>
+                <h2 className="text-2xl font-bold text-white">{t('dashboard.charts')}</h2>
            
             </section>
             <div className="mb-4" id="mychart"></div>
@@ -264,7 +268,7 @@ useEffect(()=>{
       
         </section>
 
-
+{/* 
       <div className='sticky bottom-0'>
 
         <footer className="flex justify-between w-full bg-white border-t-2 py-1 pt-4">
@@ -290,8 +294,8 @@ useEffect(()=>{
 </svg>
 
 
-        </footer>
-      </div>
+        </footer> */}
+      {/* </div> */}
 
 
         </main>

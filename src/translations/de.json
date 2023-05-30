@@ -135,7 +135,30 @@
 
                   
                 
-              }
+              },
+              "Login": {
+                "scale": "Atteindre de nouveaux sommets",
+                "email": "email",
+                "pasword": "mot de passe",
+                "dont": "Vous n'avez pas de compte?",
+                "contact": "Contactez-nous si vous avez un problème"
+            },
+            "Signup": {
+                "scale": "Atteindre de nouveaux sommets",
+                "firstname": "prénom",
+                "lastname": "nom de famille",
+                "email": "email",
+                "pasword": "mot de passe",
+                "have": "Vous avez déjà un compte?",
+                "contact": "Contactez-nous si vous avez un problème"
+            },
+            "dashboard": {
+                "account": "COMPTE",
+                "personal": "Personnel",
+                "btcBal": "Solde BTC",
+                "usBal": "Solde USD",
+                "charts": "GRAPHIQUES"
+            }
               
               
            

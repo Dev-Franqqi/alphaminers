@@ -135,5 +135,38 @@
         "contact": "Contact"
     
     
+    },
+
+
+    "Login":{
+        "scale":"Scale to new heights",
+        "email":"email",
+        "pasword":"password",
+        "dont":"dont have an account?",
+        "contact":"Contact us if you have any issue"
+
+    },
+
+    "Signup":{
+        "scale":"Scale to new heights",
+        "firstname":"firstname",
+        "lastname":"lastname",
+        "email":"email",
+        "pasword":"password",
+        "have":"Have an account?",
+        "contact":"Contact us if you have any issue"
+        
+
+
+
+    },
+    "dashboard":{
+        "account":"ACCOUNT",
+        "personal":"Personal",
+        "btcBal":"BTC Balance",
+        "usBal":"USD Balance",
+        "charts":"CHARTS"
     }
+
+
     }

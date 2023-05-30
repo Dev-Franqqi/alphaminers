@@ -7,8 +7,10 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Cookies from 'js-cookie'
+import { useTranslation } from 'react-i18next';
 
 export default function Login() {
+  const {t} = useTranslation()
   const navigate= useNavigate()
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
@@ -50,12 +52,12 @@ export default function Login() {
 
 <motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>Alpha Crypto Miners</Link></motion.h1>
 
-<motion.p initial={{opacity:0}}animate={{opacity:1}} className="hidden mt-2 text-sm md:block">...Scale to new heights</motion.p>
+<motion.p initial={{opacity:0}}animate={{opacity:1}} className="hidden mt-2 text-sm md:block">...{t('Login.scale')}</motion.p>
 <img src={Scalable} alt="" />
 
         </div>
         <div className='py-10 px-1 md:px-5 mt-10 w-full md:w-3/5 md:bg-white md:h-5/5 md:rounded-lg md:shadow-lg md:my-auto'>
-            <h2 className='text-3xl font-bold text-white md:text-black text-center mt-10 mb-10'>LOGIN</h2>
+            <h2 className='text-3xl font-bold text-white md:text-black text-center mt-10 mb-10'>{t('login').toUpperCase()}</h2>
 
             <form onSubmit={handleSubmit} className='flex flex-col w-full md:h-3/5 '>
 
@@ -64,13 +66,13 @@ export default function Login() {
 
              
                 <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
-                <input type='password'value={password}onChange={(e)=>setPassword(e.target.value)} className='border-2 w-full h-10 p-1 rounded mx-auto mb-4' placeholder='Password' required/>
+                <input type='password'value={password}onChange={(e)=>setPassword(e.target.value)} className='border-2 w-full h-10 p-1 rounded mx-auto mb-4' placeholder='password'required/>
                 <button type='submit' className='w-4/5 h-10 bg-blue-800 mx-auto text-center py-1 shadow-lg rounded text-white'>Submit</button>
 
             </form>
-            <p className="mb-2 text-center mt-5 text-gray-500">don't have an account? <Link className="underline ml-2" to='/signup'>Sign up</Link></p>
+            <p className="mb-2 text-center mt-5 text-gray-500">don't have an account? <Link className="underline ml-2" to='/signup'>{t('signup')}</Link></p>
 
-            <p className='mb-10 text-center text-gray-500'><a href="https://me.whatsapp/+12366023869">Contact us if you have any issue</a></p>
+            <p className='mb-10 text-center text-gray-500'><a href="https://me.whatsapp/+12366023869">{t('Login.contact')}</a></p>
 
 
 
