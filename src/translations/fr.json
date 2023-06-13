@@ -5,10 +5,10 @@
     "login": "Connexion",
     "signup": "Inscription",
     "start": "Commencez votre voyage de trading et d'investissement",
-    "startText": "Nous achetons et vendons également des bitcoins et des cartes-cadeaux. Profitez d'un trading fluide et sans problème avec ALPHA CRYPTO MINERS",
+    "startText": "Nous achetons et vendons également des bitcoins et des cartes-cadeaux. Profitez d'un trading fluide et sans problème avec Cryptonetverse",
     "putting": "Nous plaçons nos investisseurs en premier",
     "commited": "Nous nous engageons à offrir un service exceptionnel à tous nos investisseurs tout en fournissant la meilleure formation à notre équipe",
-    "companyName": "ALPHA CRYPTO MINERS",
+    "companyName": "Cryptonetverse",
     "description": "Un courtier en ligne international actif dans le trading de crypto et d'actions. Avec notre plateforme de trading avancée basée sur le web, vous pouvez trader sur la liste d'actifs la plus complète de l'industrie.",
     "tradingPlatform": "Avec notre plateforme de trading avancée basée sur le web, vous pouvez trader sur la liste d'actifs la plus complète de l'industrie.",
     "tradingCosts": "Maintenez vos frais de trading bas avec des spreads compétitifs, des commissions et des marges faibles.",
@@ -73,7 +73,7 @@
       }
     },
     "StartTrading": {
-      "heading": "Commencez à trader avec ALPHA CRYPTO MINERS",
+      "heading": "Commencez à trader avec Cryptonetverse",
       "subheading": "Ouverture rapide de compte en 3 étapes simples",
       "steps": [
         {

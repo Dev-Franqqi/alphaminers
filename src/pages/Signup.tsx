@@ -1,5 +1,6 @@
 import {motion} from 'framer-motion'
 import {Link} from 'react-router-dom'
+import Input from '@mui/joy/Input';
 import { useState } from 'react'
 import { addDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -78,7 +79,7 @@ export default function Signup() {
     <div className='w-full h-screen flex justify-between overflow-hidden font-sans px-10'>
         <div className='hidden w-3/5 text-white md:block px-5 h-full'>
 
-<motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>ALPHA CRYPTO MINERS</Link></motion.h1>
+<motion.h1 initial={{y:-250}} animate={{y:10}} className="hidden md:block text-2xl font-bold"><Link to='/'>Cryptonetverse</Link></motion.h1>
 
 <motion.p initial={{opacity:0}}animate={{opacity:1}} className="hidden mt-2 text-sm md:block">...{t("Signup.scale")}</motion.p>
     <img src={chartImage} alt="" />
@@ -92,13 +93,14 @@ export default function Signup() {
             {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>}
 
                 <div className='flex justify-between w-full'>
+                    <Input type='text' onChange={(e)=>{setFirstName(e.target.value)}} className='border-2 w-3/6  h-10 p-1 rounded mr-2 mb-2' placeholder='firstname' required/>
                     
-                <input type='text' onChange={(e)=>{setFirstName(e.target.value)}} className='border-2 w-3/6  h-10 p-1 rounded mr-2 mb-2' placeholder='firstname' required/>
-                <input type='text' onChange={(e)=>{setLastname(e.target.value)}} className='border-2 w-3/6 h-10 p-1 rounded mx-auto mb-2' placeholder='lastname' required/>
+               
+                <Input type='text' onChange={(e)=>{setLastname(e.target.value)}} className='border-2 w-3/6 h-10 p-1 rounded mx-auto mb-2' placeholder='lastname' required/>
                 </div>
 
-                <input type='email'onChange={(e)=>{setEmail(e.target.value)}} className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
-                <input type='password' onChange={(e)=>{setPassword(e.target.value)}} className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='password' required/>
+                <Input type='email'onChange={(e)=>{setEmail(e.target.value)}} className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='Email' required/>
+                <Input type='password' onChange={(e)=>{setPassword(e.target.value)}} className='border-2 w-full h-10 p-1 rounded mx-auto mb-2' placeholder='password' required/>
                 <button type='submit' className='w-4/5 h-10 bg-blue-800 mx-auto text-center py-1 shadow-lg rounded text-white'>Submit</button>
 
             </form>
@@ -108,7 +110,7 @@ export default function Signup() {
 
 
             <hr className="mt-5"/>
-            <footer className="text-center text-white mb-2 md:text-black mt-1"><Link to='/'>ALPHA CRYPTO MINERS</Link></footer>
+            <footer className="text-center text-white mb-2 md:text-black mt-1"><Link to='/'>Cryptonetverse</Link></footer>
 
 
         </div>

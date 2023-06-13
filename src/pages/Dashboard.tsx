@@ -12,6 +12,17 @@ import { db } from "../components/firebase";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Language from "../components/Language"
+import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
+import IconButton from '@mui/material/IconButton';
+import Collapse from '@mui/material/Collapse';
+import CloseIcon from '@mui/icons-material/Close';
+
+
+
+
+
+
 
 type B ={
   uid: string,
@@ -48,6 +59,7 @@ interface Person{
 }
 
 export default function Dashboard() {
+  const [open, setOpen] = useState(true);
   const {t} = useTranslation()
   const navigate = useNavigate()
   const [user,setUser] = useState<Object|undefined>()
@@ -56,7 +68,7 @@ export default function Dashboard() {
   const [person,setPerson] = useState<undefined|Person>()
   const [menu,setMenu] = useState(false)
   const [isSlideVisible, setIsSlideVisible] = useState(false);
-  const [hide,setHide] = useState('')
+  
   const toggleSlide = () => {
     setMenu(!menu)
     setIsSlideVisible(!isSlideVisible);
@@ -179,10 +191,29 @@ useEffect(()=>{
     <>  
 
     <main className=" relative bg-blue-900 flex flex-col justify-between w-full h-full py-4 px-2">
-      <div className={`bg-white rounded-md text-sm py-2 md:w-2/5 px-1 mb-2 ${hide}`}>
-      <svg onClick={()=>setHide('hidden')} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 mb-1 text-red-700 font-bold">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-</svg>{t('dashboard.infoOne')} <Link to='https://wa.me/+12366023869' className='underline'>{t('dashboard.infoTwo')}</Link> </div>
+    <Box sx={{ width: '100%' }}>
+      <Collapse in={open}>
+        <Alert
+        severity='info'
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 }}
+        >
+          {t('dashboard.infoOne')} <Link to='https://wa.me/+12366023869' className='underline'>{t('dashboard.infoTwo')}</Link> 
+        </Alert>
+      </Collapse>
+    </Box>
+
     
           
            {/* {error &&  <div className='border-3 border-red-600 bg-white text-red-600 px-2 py-2 rounded-md mb-2 w-fit'>{errmessage}</div>} */}
@@ -224,7 +255,7 @@ useEffect(()=>{
         <Link to='https://wa.me/+12366023869' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.withdrawal')}</Link>
         <Link to='https://wa.me/+12366023869' className="w-4/5 text-center  rounded-md mb-2 py-1 border">{t('dashboard.customerSup')}</Link>
 
-        <div onClick={logoutHandler} className="w-4/5 mb-3 text-center  rounded-md py-1 border">{t('dashboard.logOut')}</div>
+        <div onClick={logoutHandler} className="w-4/5 mb-3 text-center cursor-pointer rounded-md py-1 border">{t('dashboard.logOut')}</div>
 
         </div>
 

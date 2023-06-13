@@ -1,11 +1,38 @@
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
+import { ReactNode, useRef } from "react";
+import { useInView } from "framer-motion";
+
+type Com ={
+    children: ReactNode,className:String
+
+}
+
+function Section({ children }:Com) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+  
+    return (
+      <section ref={ref}>
+        <span
+          style={{
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          }}
+        >
+          {children}
+        </span>
+      </section>
+    );
+  }
+
 export default function Fourthsection() {
     const {t}= useTranslation()
     return (
       
   <>
-      <section  className="p-8">
+      <Section className="p-8">
       <h5 id='market' className='text-3xl  font-bold text-center'>{t('AccountTypes.heading')}</h5>
   
   
@@ -69,7 +96,7 @@ export default function Fourthsection() {
               <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.4')}</li>
               <li><span className='text-blue-500 mr-1'>✓</span>{t('AccountTypes.premium.features.5')}</li>
           </ul>
-          <Link to='/signup' className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' ><a href='/dashboard'>{t('AccountTypes.premium.button')}</a></Link>
+          <Link to='/signup' className='bg-sky-600 text-white rounded py-2 relative md:top-4 md:mb-6 w-2/5 px-4' >{t('AccountTypes.premium.button')}</Link>
                    -
       </div>
       </div>
@@ -81,7 +108,7 @@ export default function Fourthsection() {
       
       
   
-      </section>
+      </Section>
   
   
       <section className="text-center text-black mb-10 p-8 bg-gray-200">

@@ -7,10 +7,10 @@
     "login": "Giriş yap",
     "signup": "Kaydol",
     "start": "Ticaret ve yatırım yolculuğunuza başlayın",
-    "startText": "Ayrıca Bitcoin ve hediye kartları da alıp satabiliriz. ALPHA CRYPTO MINERS ile sorunsuz ve akıcı bir ticaret deneyiminin tadını çıkarın.",
+    "startText": "Ayrıca Bitcoin ve hediye kartları da alıp satabiliriz. Cryptonetverse ile sorunsuz ve akıcı bir ticaret deneyiminin tadını çıkarın.",
     "putting": "Yatırımcılarımızı öncelikli tutuyoruz",
     "commited": "Tüm yatırımcılarımıza olağanüstü hizmet sunmayı ve ekibimize en iyi eğitimi sağlamayı taahhüt ediyoruz",
-    "companyName": "ALPHA CRYPTO MINERS",
+    "companyName": "Cryptonetverse",
     "description": "Kripto para ve hisse senedi ticaretiyle aktif olarak ilgilenen uluslararası çevrimiçi bir komisyoncuyuz. Gelişmiş web tabanlı ticaret platformumuzla endüstrinin en kapsamlı varlık listesinde işlem yapabilirsiniz.",
     "tradingPlatform": "Gelişmiş web tabanlı ticaret platformumuzla endüstrinin en kapsamlı varlık listesinde işlem yapabilirsiniz.",
     "tradingCosts": "Rekabetçi spreadler, düşük komisyonlar ve düşük marjlarla ticaret maliyetlerinizi düşük tutun.",
@@ -78,7 +78,7 @@
       
         },
         "StartTrading": {
-          "heading": "ALPHA CRYPTO MINERS ile İşlem Yapmaya Başlayın",
+          "heading": "Cryptonetverse ile İşlem Yapmaya Başlayın",
           "subheading": "3 Basit Adımda Hızlı Hesap Açılışı",
           "steps": [
             {

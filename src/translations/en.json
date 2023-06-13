@@ -5,10 +5,10 @@
     "login": "Login",
     "signup": "Signup",
     "start": "Begin Your Trading and Investment Journey",
-    "startText": "We also buy and sell bitcoins and gift cards. Enjoy smooth and hassle-free trading with ALPHA CRYPTO MINERS.",
+    "startText": "We also buy and sell bitcoins and gift cards. Enjoy smooth and hassle-free trading with Cryptonetverse.",
     "putting": "We put our investors first",
     "commited": "We are committed to providing exceptional service to all our investors while providing the best education to our team.",
-    "companyName": "ALPHA CRYPTO MINERS",
+    "companyName": "Cryptonetverse",
     "description": "An international online broker actively involved in Crypto & Stocks Trading. With our advanced web-based trading platform, you can trade on the most comprehensive list of assets in the industry.",
     "tradingPlatform": "Trade on the most comprehensive list of assets in the industry with our advanced web-based trading platform.",
     "tradingCosts": "Keep your trading costs low with competitive spreads, commissions, and low margins.",
@@ -77,7 +77,7 @@
         }
     },
     "StartTrading": {
-        "heading": "Start Trading with ALPHA CRYPTO MINERS",
+        "heading": "Start Trading with Cryptonetverse",
         "subheading": "Fast Account Opening in 3 Easy Steps",
         "steps": [
             {
