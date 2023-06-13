@@ -2,8 +2,6 @@ import * as CryptoCharts from "cryptocharts"
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie"
-import { signOut } from "firebase/auth";
-import { auth } from "../components/firebase";
 import { useState } from "react";
 import { query,where } from "firebase/firestore";
 import { collection } from "firebase/firestore";
@@ -17,6 +15,7 @@ import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import CloseIcon from '@mui/icons-material/Close';
+import MenuPopupState from "../components/MenuPopupState";
 
 
 
@@ -66,14 +65,7 @@ export default function Dashboard() {
   // const [error,setError] = useState(false)
   // const [errmessage, setErrmessage] = useState('')
   const [person,setPerson] = useState<undefined|Person>()
-  const [menu,setMenu] = useState(false)
-  const [isSlideVisible, setIsSlideVisible] = useState(false);
-  
-  const toggleSlide = () => {
-    setMenu(!menu)
-    setIsSlideVisible(!isSlideVisible);
-  };
-
+ 
   
   
 
@@ -122,20 +114,6 @@ btcAmount:0
 }
 
 
-const logoutHandler = ()=>{
-
-  signOut(auth)
-  .then(()=>{
-    Cookies.remove("User");
-    navigate('/login')
-  })
-  .catch(err=>{
-    console.log(err)
-    // setError(true)
-    // setErrmessage(err.message)
-  })
-
-}
 
 useEffect(()=>{
   const check =()=>{
@@ -223,18 +201,9 @@ useEffect(()=>{
             <div className='flex w-full justify-between mb-4'>
             <h1 className="font-bold text-2xl text-white">ACCOUNT</h1>
 
-            {!menu &&    <svg onClick={toggleSlide } xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="font-bold text-white w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-</svg> }
-{menu && <svg onClick={toggleSlide} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white font-bold">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-</svg>
- }
-         
-
-
 
           
+            <MenuPopupState />
 
 
             </div>
@@ -244,22 +213,16 @@ useEffect(()=>{
 
 
             <hr className='mb-1'/>
-            {isSlideVisible && 
+            {/* {isSlideVisible && 
         <div className="text-sm flex flex-col rounded-md mt-1 justify-center  items-center py-3 bg-white">
 
 
-        <Link to='/' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.homepage')}</Link>
 
-        <Link to='https://wa.me/+12366023869' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.deposit')}</Link>
 
-        <Link to='https://wa.me/+12366023869' className="w-4/5 mb-2 rounded-md text-center py-1 border">{t('dashboard.withdrawal')}</Link>
-        <Link to='https://wa.me/+12366023869' className="w-4/5 text-center  rounded-md mb-2 py-1 border">{t('dashboard.customerSup')}</Link>
 
-        <div onClick={logoutHandler} className="w-4/5 mb-3 text-center cursor-pointer rounded-md py-1 border">{t('dashboard.logOut')}</div>
+        
 
-        </div>
-
-      }
+      } */}
 
         <Language />
           
