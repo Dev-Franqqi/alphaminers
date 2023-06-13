@@ -302,7 +302,7 @@ useEffect(()=>{
                 <h2 className="text-2xl font-bold text-white">{t('dashboard.charts')}</h2>
            
             </section>
-            <div className="mb-4 z-0" id="mychart"></div>
+            <div className="mb-4 bg-gray-300 p-8 rounded  z-0" id="mychart"></div>
       
       
         </section>
