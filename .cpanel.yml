@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/user/public_html   # Destination directory
+    - /bin/rm -rf $DEPLOYPATH/*                  # Remove existing files in the destination
+    - /bin/cp -R dist/* $DEPLOYPATH              # Copy the Vite React build files to the destination
+    - /bin/cp dist/index.html $DEPLOYPATH/index.html  # Copy the index.html file separately
