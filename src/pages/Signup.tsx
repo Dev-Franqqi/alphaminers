@@ -43,7 +43,7 @@ export default function Signup() {
                 email:email,
                 password:password,
                 amount: 0,
-                btcAmount:0.00,
+               
                 uid:cred.user.uid
             }).then(()=>{
           Cookies.set("User",JSON.stringify(cred.user),{ sameSite: 'Lax' ,expires:2})

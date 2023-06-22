@@ -54,7 +54,7 @@ interface Person{
   lastname:string;
   uid:string;
   password:string;
-  btcAmount:number;
+
 }
 
 export default function Dashboard() {
@@ -65,6 +65,7 @@ export default function Dashboard() {
   // const [error,setError] = useState(false)
   // const [errmessage, setErrmessage] = useState('')
   const [person,setPerson] = useState<undefined|Person>()
+  const [btc,setBTC] = useState<undefined|number>()
  
   
   
@@ -110,7 +111,7 @@ firstname:'',
 lastname:'',
 uid:'',
 password:'',
-btcAmount:0
+
 }
 
 
@@ -145,6 +146,28 @@ useEffect(()=>{
     const inf:Person=snapshot.docs[0].data() as Person
 
     setPerson(inf)
+    async function usdToBTC(amount:number) {
+      // Get the latest Bitcoin rate in USD from the Coindesk API
+      const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+      const data = await response.json();
+      const rate = data.bpi.USD.rate_float;
+      
+    
+      // Convert the amount to Bitcoin
+      const btcAmount = parseFloat((amount / rate).toFixed(8))
+    
+      setBTC(btcAmount);
+      console.log(btc)
+    }
+    if(person){
+      usdToBTC(person.amount)
+
+    }
+    
+  
+  
+
+  
     
     })
 
@@ -154,10 +177,8 @@ useEffect(()=>{
         // setError(true)
         // setErrmessage(error.message)
     });
-  
-  
 
-  
+
 
 
 
@@ -270,7 +291,7 @@ useEffect(()=>{
                {person && <div className="flex justify-between">
                
                
-              <p className="text-2xl font-bold ">{person.btcAmount}</p>
+              <p className="text-2xl font-bold ">{btc}</p>
               <p className="text-2xl font-bold ">${person.amount}</p>
 
               </div> } 
