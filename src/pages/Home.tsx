@@ -9,6 +9,7 @@ import Fourthsection from "../components/Homepage/Fourthsection";
 import Footer from "../components/Homepage/Footer";
 import { Link } from "react-router-dom";
 import whatsapps from "../assets/whatsapp.png"
+
 export default function Home() {
   const transits:Transition ={
     opacity:1,

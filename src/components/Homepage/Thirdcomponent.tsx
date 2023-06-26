@@ -1,5 +1,6 @@
 import {motion} from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import Certi from "../../assets/certi.jpeg"
 
 export default function Thirdcomponent() {
   const {t} = useTranslation()
@@ -59,9 +60,14 @@ className='mb-10'>
                 <p className="mt-8">{t('section3.content')}.</p>
              
 
-      
+
             </motion.section>
             </div>
+            <div className='flex justify-center'>
+
+            <img src={Certi} alt="" />
+            </div>
+
 
 </motion.div>
   )
