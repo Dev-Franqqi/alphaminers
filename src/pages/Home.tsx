@@ -37,7 +37,7 @@ export default function Home() {
 
     <div className="flex justify-end">
 
-   <motion.div initial='hidden' animate='visible' variants={vari} transition={whatsappt} className="bg-gray-200 fixed md:bottom-0 bottom-0 w-40 rounded "><Link className="flex" to='https://wa.me/+12366023869'>
+   <motion.div initial='hidden' animate='visible' variants={vari} transition={whatsappt} className="bg-gray-200 fixed md:bottom-0 bottom-0 w-40 rounded "><Link className="flex" to='https://wa.me/+16072257704'>
      <img src={whatsapps} width={50} alt="" />
      <span className=" text-black self-center">Chat with us</span>
    </Link>
