@@ -37,33 +37,41 @@ export default function MenuPopupState() {
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
         <>
+          <svg
+            {...bindTrigger(popupState)}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="font-bold text-white w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 9h16.5m-16.5 6.75h16.5"
+            />
+          </svg>
 
-           <svg {...bindTrigger(popupState)} xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="font-bold text-white w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-</svg> 
-
-       
           <Menu {...bindMenu(popupState)}>
             <MenuItem onClick={popupState.close}>
-        <Link to='/'>{t('dashboard.homepage')}</Link>
-
-
+              <Link to="/">{t("dashboard.homepage")}</Link>
             </MenuItem>
             <MenuItem onClick={popupState.close}>
-        <Link to='https://wa.me/+12366023869' target='_blank'>{t('dashboard.deposit')}</Link> </MenuItem>
-
+              <Link to="/deposit">{t("dashboard.deposit")}</Link>{" "}
+            </MenuItem>
 
             <MenuItem>
-        <Link to='https://wa.me/+12366023869' target='_blank'>{t('dashboard.withdrawal')}</Link>
-
-            
+              <Link to="https://wa.me/+16072257704" target="_blank">
+                {t("dashboard.withdrawal")}
+              </Link>
             </MenuItem>
             <MenuItem>
-
-        <Link to='https://wa.me/+12366023869' >{t('dashboard.customerSup')}</Link>
+              <Link to="https://wa.me/+16072257704">
+                {t("dashboard.customerSup")}
+              </Link>
             </MenuItem>
-            <MenuItem onClick={logoutHandler}>{t('dashboard.logOut')}</MenuItem>
-
+            <MenuItem onClick={logoutHandler}>{t("dashboard.logOut")}</MenuItem>
           </Menu>
         </>
       )}

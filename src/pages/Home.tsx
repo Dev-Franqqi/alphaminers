@@ -43,7 +43,8 @@ export default function Home() {
    </Link>
 
       </motion.div> 
-    </div>
+      </div>
+      
 
     
         {/* <img className="mx-auto" src={building} alt="" /> */}
