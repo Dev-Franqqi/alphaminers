@@ -7,8 +7,8 @@ import Thirdcomponent from "../components/Homepage/Thirdcomponent";
 import Secondsection from "../components/Homepage/Secondsection";
 import Fourthsection from "../components/Homepage/Fourthsection";
 import Footer from "../components/Homepage/Footer";
-import { Link } from "react-router-dom";
-import whatsapps from "../assets/whatsapp.png"
+// import { Link } from "react-router-dom";
+// import whatsapps from "../assets/whatsapp.png"
 
 export default function Home() {
   const transits:Transition ={
@@ -20,13 +20,13 @@ export default function Home() {
       hidden:{opacity:0},
       visible:{opacity:1}
     }
-    const whatsappt:Transition = {
-      opacity:1,
-      delay:4,
-      duration:6,
-      ease:'easeIn'
+    // const whatsappt:Transition = {
+    //   opacity:1,
+    //   delay:4,
+    //   duration:6,
+    //   ease:'easeIn'
 
-    }
+    // }
 
 
   return (
@@ -35,7 +35,7 @@ export default function Home() {
    <CryptoList />
    <Navbar />
 
-    <div className="flex justify-end">
+    {/* <div className="flex justify-end">
 
    <motion.div initial='hidden' animate='visible' variants={vari} transition={whatsappt} className="bg-gray-200 fixed md:bottom-0 bottom-0 w-40 rounded "><Link className="flex" to='https://wa.me/+16072257704'>
      <img src={whatsapps} width={50} alt="" />
@@ -43,7 +43,7 @@ export default function Home() {
    </Link>
 
       </motion.div> 
-      </div>
+      </div> */}
       
 
     

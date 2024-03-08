@@ -61,7 +61,7 @@ export default function MenuPopupState() {
               <Link to="/deposit">{t("dashboard.deposit")}</Link>{" "}
             </MenuItem>
 
-            <MenuItem>
+            {/* <MenuItem>
               <Link to="https://wa.me/+16072257704" target="_blank">
                 {t("dashboard.withdrawal")}
               </Link>
@@ -70,7 +70,7 @@ export default function MenuPopupState() {
               <Link to="https://wa.me/+16072257704">
                 {t("dashboard.customerSup")}
               </Link>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem onClick={logoutHandler}>{t("dashboard.logOut")}</MenuItem>
           </Menu>
         </>

@@ -253,9 +253,9 @@ export default function Dashboard() {
           </div>
         </section>
       </main>
-      <section>
+      <section className="text-white">
         {isLoading ? (
-          <div>Loading...</div>
+          <div className="text-white">Loading...</div>
         ) : (
           <div>
             {error3 && <div className="text-red-500 text-center">{error3}</div>}
@@ -271,7 +271,7 @@ export default function Dashboard() {
               <TableHead className="text-right">Amount</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="text-white">
             {transaction?.map((invoice: Transaction, index: number) => (
               <TableRow key={index}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
@@ -279,9 +279,7 @@ export default function Dashboard() {
                 <TableCell>{invoice.transactionDetail}</TableCell>
                 <TableCell
                   className={
-                    invoice.transactionType == "deposit"
-                      ? "text-right text-green-500 font-bold"
-                      : "text-right font-bold text-red-500"
+                    "text-right  font-bold"
                   }
                 >
                   ${invoice.transactionAmount}

@@ -1,112 +1,91 @@
-import {motion} from 'framer-motion'
-import {Link} from 'react-router-dom'
-import Input from "@mui/material/Input";
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Input from "@mui/joy/Input";
+import { useState } from "react";
 import { addDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { ChangeEvent } from 'react';
-import { colref } from '../components/firebase';
-import { auth } from '../components/firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { ChangeEvent } from "react";
+import { colref } from "../components/firebase";
+import { auth } from "../components/firebase";
 import { useNavigate } from "react-router-dom";
-import chartImage from "../assets/chartImage.png"
-import Cookies from "js-cookie"
-import { useTranslation } from 'react-i18next';
+import chartImage from "../assets/chartImage.png";
+import Cookies from "js-cookie";
+import { useTranslation } from "react-i18next";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 export default function Signup() {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
-    const {t}= useTranslation();
-    const navigate = useNavigate();
-
-
-    const [firstname,setFirstName]  =useState('');
-    const [lastname,setLastname] = useState('');
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const [error ,setError] = useState(false);
-    const [errmessage, setErrmessage] = useState('');
-  const [ssn, setSsn] = useState('')
-   const [driverLicenseImage, setDriverLicenseImage] = useState<File | null>(
-     null
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  const [errmessage, setErrmessage] = useState("");
+  const [ssn, setSsn] = useState("");
+  const [driverLicenseImage, setDriverLicenseImage] = useState<File | null>(
+    null
   );
-  
-    const storage = getStorage();
 
-    const storageRef = ref(storage, `${email}`);
-    const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-      const file = e.target.files?.[0];
-      if (file) {
-        setDriverLicenseImage(file);
-      }
-  };
-  
-   const handleRemoveImage = () => {
-     setDriverLicenseImage(null);
-   };
+  const storage = getStorage();
 
-
-
-    
-    const handleSubmit =(e: React.FormEvent<HTMLFormElement>)=>{
-      e.preventDefault();
-      if (!driverLicenseImage) {
-        return
-      }
-    uploadBytes(storageRef, driverLicenseImage).then(() => {
-      alert("Uploaded a blob or file!");
-    })
-      .catch(error => {
-        setError(true)
-        setErrmessage(error.message)
-        alert(error.message)
-          
-        })
-        createUserWithEmailAndPassword(auth,email,password)
-        .then((cred)=>{
-        
-           
-          
-          
-    
-            addDoc(colref,{
-                firstname:firstname,
-                lastname:lastname,
-                email:email,
-                password:password,
-                amount: 0,
-               
-                uid: cred.user.uid,
-                ssn:ssn
-            }).then(()=>{
-          Cookies.set("User",JSON.stringify(cred.user),{ sameSite: 'Lax' ,expires:2})
-
-                setEmail("");
-                setPassword("");
-
-                
-            })
-    
-            
-    
-          navigate("/dashboard");
-    
-    
-    
-    
-    
-        })
-    
-        .catch(err=>{
-            
-            setError(true)
-            setErrmessage(err.message)
-        })
-    
-     
-      
-            
+  const storageRef = ref(storage, `${email}`);
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setDriverLicenseImage(file);
     }
-    
+  };
+
+  const handleRemoveImage = () => {
+    setDriverLicenseImage(null);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!driverLicenseImage) {
+      return;
+    }
+    uploadBytes(storageRef, driverLicenseImage)
+      .then(() => {
+        alert("Uploaded a blob or file!");
+      })
+      .catch((error) => {
+        setError(true);
+        setErrmessage(error.message);
+        alert(error.message);
+      });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((cred) => {
+        addDoc(colref, {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          password: password,
+          amount: 0,
+
+          uid: cred.user.uid,
+          ssn: ssn,
+        }).then(() => {
+          Cookies.set("User", JSON.stringify(cred.user), {
+            sameSite: "Lax",
+            expires: 2,
+          });
+
+          setEmail("");
+          setPassword("");
+        });
+
+        navigate("/dashboard");
+      })
+
+      .catch((err) => {
+        setError(true);
+        setErrmessage(err.message);
+      });
+  };
+
   return (
     <div className="w-full h-screen flex justify-between overflow-hidden font-sans px-10">
       <div className="hidden w-3/5 text-white md:block px-5 h-full">
@@ -192,13 +171,11 @@ export default function Signup() {
           <label className="text-white text-sm" htmlFor="license">
             Drivers License
           </label>
-          <div className="flex">
-            <Input
+          <div className="flex text-white">
+            <input
               type="file"
-              inputProps={{
-                accept: "image/*",
-                capture: "environment",
-              }}
+              accept="image/*"
+              capture="environment"
               onChange={handleImageChange}
               className="mb-3"
             />
@@ -227,9 +204,9 @@ export default function Signup() {
             {t("login")}
           </Link>
         </p>
-        <p className="mb-10 text-center underline text-gray-500">
+        {/* <p className="mb-10 text-center underline text-gray-500">
           <a href="https://wa.me/+16072257704">{t("Signup.contact")}</a>
-        </p>
+        </p> */}
 
         <hr className="mt-5" />
         <footer className="text-center text-white mb-2 md:text-black mt-1">
@@ -239,5 +216,3 @@ export default function Signup() {
     </div>
   );
 }
-
-

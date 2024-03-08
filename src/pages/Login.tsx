@@ -113,9 +113,9 @@ export default function Login() {
           </Link>
         </p>
 
-        <p className="mb-10 text-center underline` text-gray-500">
+        {/* <p className="mb-10 text-center underline` text-gray-500">
           <a href="https://wa.me/+16072257704">{t("Login.contact")}</a>
-        </p>
+        </p> */}
 
         <hr className="mt-5" />
         <footer className="text-center text-white md:text-black mt-1">
