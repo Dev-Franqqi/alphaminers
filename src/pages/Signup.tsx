@@ -45,6 +45,8 @@ export default function Signup() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!driverLicenseImage) {
+      setError(true)
+      setErrmessage('No license image');
       return;
     }
     uploadBytes(storageRef, driverLicenseImage)

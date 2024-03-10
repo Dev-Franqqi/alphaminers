@@ -74,7 +74,7 @@ export default function Dashboard() {
   const [btc, setBTC] = useState<undefined | number>();
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [transaction, setTransaction] = useState<Transaction[]>();
-  const [error3,setError3] = useState<string>('')
+  // const [error3,setError3] = useState<string>('')
 
   const fetchTransaction = async () => {
      
@@ -90,7 +90,7 @@ export default function Dashboard() {
          
        
      } catch (error: any) {
-       setError3(error.message);
+      //  setError3(error.message);
      }
    };
 
@@ -258,7 +258,7 @@ export default function Dashboard() {
           <div className="text-white">Loading...</div>
         ) : (
           <div>
-            {error3 && <div className="text-red-500 text-center">{error3}</div>}
+            {/* {error3 && <div className="text-red-500 text-center">{error3}</div>} */}
           </div>
         )}
         <Table>

@@ -130,7 +130,7 @@ export default function Fourthsection() {
        
        <div className="mb-8 md:w-1/6 leading-8">
        <div className="w-20 h-20 rounded-full mx-auto bg-blue-500 pt-5 text-white text-4xl">{t('StartTrading.steps.1.number')}</div>
-       <p className="font-bold">{t('StartTrading.steps.0.title')}</p>
+       <p className="font-bold">{t('StartTrading.steps.1.title')}</p>
         <p className="text-sm  text-gray-500 font-bold">{t('StartTrading.steps.1.description')}</p>
   
   
