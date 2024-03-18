@@ -9,6 +9,7 @@ import enTranslation from "./translations/en.json"
 import frTranslation from "./translations/fr.json"
 import esTranslation from "./translations/es.json"
 import trTranslation from "./translations/tr.json"
+import DarkContextProvider from './components/Darkprovider.tsx';
 
 
 i18n
@@ -38,6 +39,10 @@ console.log(i18n.language)
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <DarkContextProvider>
     <App />
+
+
+    </DarkContextProvider>
   </React.StrictMode>
 );

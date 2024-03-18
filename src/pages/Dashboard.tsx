@@ -7,288 +7,201 @@ import { query, where } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { db } from "../components/firebase";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import Language from "../components/Language";
-import Box from "@mui/material/Box";
-import Alert from "@mui/material/Alert";
-import IconButton from "@mui/material/IconButton";
-import Collapse from "@mui/material/Collapse";
-import CloseIcon from "@mui/icons-material/Close";
-import MenuPopupState from "../components/MenuPopupState";
-import getTransaction from "@/components/getTransactions";
 
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import Loadingcomp from "@/components/Loadingcomp";
+import { Button } from "@/components/ui/button"
+import { SlGraph } from "react-icons/sl";
+import { IoWalletOutline } from "react-icons/io5";
+import { LiaFileInvoiceSolid } from "react-icons/lia";
+import { FaGear } from "react-icons/fa6";
+import Logo from '../assets/Logo.svg'
 
-type B = {
-  uid: string;
-  email: string;
-  emailVerified: boolean;
-  isAnonymous: boolean;
-  providerData: Array<object>;
-  providerId: string;
-  displayName: string | null;
-  phoneNumber: string | null;
-  apiKey: string;
-  appName: string;
-  createdAt: string;
-  lastLoginAt: string;
-  stsTokenManager: {
-    accessToken: string;
-    expirationTime: string;
-    refreshToken: string;
-  };
-};
-
-interface Person {
-  email: string;
-  amount: number;
-  firstname: string;
-  lastname: string;
-  uid: string;
-  password: string;
+export interface Person{
+  email:string;
+  amount:number;
+  firstname:string;
+  lastname:string;
+  totaldeposits:number;
+  currentprofits:number;
+  uid:string;
+  password:string;
+  country:string;
+  phone:string;
 }
 
-interface Transaction{
-  email: string,
-  transactionType: string,
-  transactionDetail: string,
-  transactionAmount: number
+export type B ={
+  uid: string,
+ email: string,
+emailVerified: boolean,
+isAnonymous: boolean,
+providerData: Array<object>,
+// 0:,
+providerId: string,
+
+displayName: string | null,
+
+phoneNumber: string | null,
+// ...
+apiKey: string,
+appName: string,
+createdAt: string,
+lastLoginAt: string,
+stsTokenManager:{
+accessToken: string,
+expirationTime: string,
+refreshToken: string,
 }
+}
+
 
 export default function Dashboard() {
-  const [open, setOpen] = useState(true);
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const [user, setUser] = useState<Object | undefined>();
-  const [person, setPerson] = useState<undefined | Person>();
-  const [btc, setBTC] = useState<undefined | number>();
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  const [transaction, setTransaction] = useState<Transaction[]>();
-  // const [error3,setError3] = useState<string>('')
+  const navigate= useNavigate();
+  const [loading,setLoading] = useState(true)
+  const [darkMode,setdarkMode] = useState(false)
+  const [user,setUser] = useState<Person>()
+  const setToDarkMode = ()=>{
+      setdarkMode(true);
+      Cookies.set('dark','true')
+  }
+  const setLightMode = ()=>{
+      setdarkMode(false);
+      Cookies.set('dark','false')
+  }
 
-  const fetchTransaction = async () => {
-     
-    try {
-       
-      if (person) {
-        
-         const res = await getTransaction(person.email);
-         setTransaction(res);
-        
-      }
-       
-         
-       
-     } catch (error: any) {
-      //  setError3(error.message);
-     }
-   };
-
-  let currentDate = new Date();
-  type Options = {
-    weekday: "long";
-    month: "long";
-    day: "numeric";
-  };
-  let options: Options = { weekday: "long", month: "long", day: "numeric" };
-
-  let formattedDate = currentDate.toLocaleDateString(undefined, options);
-
- 
-  const cookieValue = Cookies.get("User");
-  const x: B =
-    cookieValue !== undefined
-      ? JSON.parse(cookieValue)
-      : {
-          email: "",
-          amount: 0,
-          firstname: "",
-          lastname: "",
-          uid: "",
-          password: "",
-        };
-
-  useEffect(() => {
-    const check = () => {
-      if (!Cookies.get("User")) {
-        navigate("/login");
-      }
-    };
-
-    check();
-    setUser(x);
-
-    const q = query(collection(db, "UserInfo"), where("uid", "==", `${x.uid}`));
-
-    getDocs(q)
-      .then((snapshot) => {
-        const inf: Person = snapshot.docs[0].data() as Person;
-
-        setPerson(inf);
-
-        async function usdToBTC(amount: number) {
-          const response = await fetch(
-            "https://api.coindesk.com/v1/bpi/currentprice.json"
-          );
-          const data = await response.json();
-          const rate = data.bpi.USD.rate_float;
-
-          const btcAmount = parseFloat((amount / rate).toFixed(8));
-          setBTC(btcAmount);
+  const gotoHome = ()=>{
+      navigate('/')
+  }
+  useEffect(()=>{
+      const dark = Cookies.get('dark');
+      if(dark){
+        if(dark==='true'){
+          setdarkMode(true)
         }
-
-        if (person) {
-          usdToBTC(person.amount);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    if (person) {
-      fetchTransaction()
-        setIsLoading(false)
       }
-  }, [person,isLoading]);
+      else{
+        setdarkMode(false)
+        
+      }
+
+      const userCookie = Cookies.get('User');
+      if(userCookie){
+          const cookieValue:B  = JSON.parse(userCookie)
+          const q = query(
+              collection(db,"UserInfo"),
+              where("uid","==",`${cookieValue.uid}`)
+          )
+          if(!loading ){
+              return
+          }
+          else{
+              
+              getDocs(q).then(snapshot=>{
+                  setUser(snapshot.docs[0].data() as Person)
+                  getDocs(q).then(snapshot=>{
+                      setUser(snapshot.docs[0].data() as Person)
+                          
+                      console.log(user)
+                  })
+              })
+          }
+          }
+          
+          
+      
+      else{
+          navigate('/login')
+      }
+
+      if(user){
+      setLoading(false)
+      }
+  
+  },[user,loading])
 
   return (
     <>
-      <main className="relative bg-blue-900 flex flex-col justify-between w-full h-full py-4 px-2">
-        <Box sx={{ width: "100%" }}>
-          <Collapse in={open}>
-            <Alert
-              severity="info"
-              action={
-                <IconButton
-                  aria-label="close"
-                  color="inherit"
-                  size="small"
-                  onClick={() => {
-                    setOpen(false);
-                  }}
-                >
-                  <CloseIcon fontSize="inherit" />
-                </IconButton>
-              }
-              sx={{ mb: 2 }}
-            >
-              {t("dashboard.infoOne")}{" "}
-              <Link to="https://wa.me/+16072257704" className="underline">
-                {t("dashboard.infoTwo")}
-              </Link>
-            </Alert>
-          </Collapse>
-        </Box>
 
-        <section className="w-full px-2">
-          <header className="text-white text-xs">{formattedDate}</header>
-          <div className="flex w-full justify-between mb-4">
-            <h1 className="font-bold text-2xl text-white">ACCOUNT</h1>
-            <MenuPopupState />
-          </div>
-          <hr className="mb-1" />
-          <Language />
-          <div className="w-full flex flex-col md:flex-row md:justify-between">
-            <section className="w-full shadow-lg border p-4 h-56 mt-10 rounded-lg text-black md:w-3/5 bg-white">
-              <div className="flex justify-between mb-5">
-                <div className="flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6 bg-white rounded-full"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <div className="ml-2">
-                    {user && <h3 className="">{person?.email}</h3>}
-                    <p className="text-gray-300 text-xs">
-                      {t("dashboard.personal")}
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-white text-xs h-fit py-1 border-black border-3 text-blue-500 w-fit px-2 rounded">
-                  USD
-                </div>
-              </div>
-              <hr />
-              {person && (
-                <div className="mb-4 mt-4 font-bold">
-                  {person.firstname} {person.lastname}
-                </div>
-              )}
-              <div className="flex flex-col h-1/5 justify-between">
-                <div className="flex justify-between">
-                  <p className="text-xs text-gray-300 font-bold">
-                    {t("dashboard.btcBal")}
-                  </p>
-                  <p className="text-xs text-gray-300 font-bold">
-                    {t("dashboard.usBal")}
-                  </p>
-                </div>
-                {person && (
-                  <div className="flex justify-between">
-                    <p className="text-2xl font-bold ">{btc}</p>
-                    <p className="text-2xl font-bold ">${person.amount}</p>
-                  </div>
-                )}
-              </div>
-            </section>
-          </div>
-        </section>
-      </main>
-      <section className="text-white">
-        {isLoading ? (
-          <div className="text-white">Loading...</div>
-        ) : (
-          <div>
-            {/* {error3 && <div className="text-red-500 text-center">{error3}</div>} */}
-          </div>
-        )}
-        <Table>
-          <TableCaption>A list of your recent invoices.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">Invoice</TableHead>
-              <TableHead>Type</TableHead>
-              <TableHead>Detail</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody className="text-white">
-            {transaction?.map((invoice: Transaction, index: number) => (
-              <TableRow key={index}>
-                <TableCell className="font-medium">{index + 1}</TableCell>
-                <TableCell>{invoice.transactionType}</TableCell>
-                <TableCell>{invoice.transactionDetail}</TableCell>
-                <TableCell
-                  className={
-                    "text-right  font-bold"
-                  }
-                >
-                  ${invoice.transactionAmount}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </section>
-    </>
+        {loading?<Loadingcomp />:
+
+<div className={darkMode?'dark bg-[#0d0f29] h-fit text-white':'text-neutral-800'}>
+<nav className="pt-3 px-2 flex justify-between">
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+</svg>
+
+
+<img src={Logo} alt="" />
+
+ {!darkMode &&  <svg
+onClick={setToDarkMode}
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+strokeWidth={1.5}
+stroke="currentColor"
+className="w-6 h-6 mt-1 "
+>
+<path
+strokeLinecap="round"
+strokeLinejoin="round"
+d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+/>
+</svg>}
+{darkMode && <svg xmlns="http://www.w3.org/2000/svg" onClick={setLightMode} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mt-1 text-white">
+<path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+</svg>
+}
+</nav>
+<main className=" mt-4 p-4 flex flex-col space-y-4">
+
+    <div className=" border flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
+
+        <div>
+
+        <p className="font-semibold text-base">WELCOME {`${user?.firstname.toUpperCase()} ${user?.lastname.toUpperCase()}`}</p>
+        <p className="font-medium text-xs">Personal Account</p>
+        </div>
+        <FaGear onClick={()=>navigate('/dashboard/settings')} className="text-2xl"/>
+
+    </div>
+
+    <div className="border dark:border-gray-600 h-[10rem] shadow-md p-4 rounded-md">
+        <div className="flex gap-x-2 mb-2">
+        <SlGraph className="text-4xl" />
+        <p className="font-bold pt-1">Total Deposit</p>
+        </div>
+        <p className="text-2xl font-bold mb-3">{`${user?.totaldeposits}.00`}</p>
+        <Button onClick={()=>navigate('/dashboard/deposit')} className="bg-[#8670FC]  focus:bg-blue-600 font-semibold text-white">Deposit</Button>
+    </div>
+    <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
+        <div className="flex gap-x-2 mb-2">
+        <IoWalletOutline className="text-4xl" />
+        <p className="font-bold pt-1">Current Profits</p>
+        </div>
+        <p className="text-2xl font-bold mb-3">{`${user?.currentprofits}.00`}</p>
+        <Button onClick={()=>navigate('/dashboard/withdraw')} className="bg-white text-[#8670FC] border dark:border-0 font-semibold">Withdraw</Button>
+    </div>
+    <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
+        <div className="flex gap-x-2 mb-2">
+        <LiaFileInvoiceSolid className="text-4xl" />
+        <p className="font-bold pt-1">Invoices</p>
+        </div>
+        
+        <Button onClick={()=>navigate('/dashboard/invoice')} className="bg-white text-orange-400 border dark:border-0 font-semibold mt-4">View</Button>
+    </div>
+
+    
+
+</main>
+
+</div>
+
+        }
+        
+        
+         
+        </>
   );
 }

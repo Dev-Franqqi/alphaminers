@@ -35,12 +35,12 @@ export default function CryptoList(){
   }
 
   return (
-    <>
+    <div className='absolute'>
     <div className={`py-1 overflow-x-hidden `}>
       <div className="flex space-x-4 animate-marquee">
         {cryptoData.map((crypto: Crypto) => (
           <div key={crypto.id} className="border rounded-lg px-4">
-            <div className="text-sm font-medium">{crypto.name}</div>
+            <div className="text-sm font-medium text-white">{crypto.name}</div>
             <div className={`text-sm ${crypto.price_change_percentage_24h < 0 ? 'text-red-600' : 'text-green-600'}`}>${crypto.current_price.toFixed(2)}</div>
             <div className={`text-sm ${crypto.price_change_percentage_24h < 0 ? 'text-red-600' : 'text-green-600'}`}>
               {crypto.price_change_24h.toFixed(2)} ({crypto.price_change_percentage_24h.toFixed(2)}%)
@@ -49,6 +49,6 @@ export default function CryptoList(){
         ))}
       </div>
     </div>
-    </>
+    </div>
   );
 };
