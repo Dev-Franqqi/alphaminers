@@ -1,3 +1,4 @@
+import { OpenContextProvider } from "@/components/Opencontextprovider"
 import Navbar from "@/components/Navbar"
 import {  useEffect} from "react"
 import Cookies from "js-cookie"
@@ -13,13 +14,13 @@ interface AnimatedComponentProps {
   children: ReactNode;
   className?:string;
 }
-
+import useOpencontext from "@/components/hooks/useOpencontext"
 
 
 const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 1,
+    threshold: 0.8,
   });
 
   return (
@@ -35,11 +36,11 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
   );
 };
 
-export default function Home(){
+export function Homecomp(){
   const {dark,setDark} = useDarkContext();
   
  
-
+const {isOpen} = useOpencontext()
   useEffect(()=>{
     const darkmode = Cookies.get('darkMode')
     if(darkmode){
@@ -56,7 +57,7 @@ export default function Home(){
 
     
 
-    <div className={dark?"dark bg-black text-white":""}>
+    <div className={dark?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
     <Navbar />
     
 
@@ -209,5 +210,14 @@ export default function Home(){
     </footer>
     
     </div>
+  )
+}
+
+export default function Home(){
+  return(
+    <OpenContextProvider>
+      <Homecomp />
+    </OpenContextProvider>
+
   )
 }

@@ -16,6 +16,7 @@ export default function DarkContextProvider({children}:Props){
     const [dark,setDark] = useState(false)
     return(
         <Darkcontext.Provider value={{dark,setDark}}>
+            
             {children}
 
         </Darkcontext.Provider>
