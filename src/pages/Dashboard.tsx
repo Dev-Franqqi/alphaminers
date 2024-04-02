@@ -211,7 +211,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <p className="font-bold pt-1">Current Profits</p>
         </div>
         <p className="text-2xl font-bold mb-3">${`${user?.currentprofits}.00`}</p>
-        <Button onClick={()=>navigate('/withdraw')} className="bg-white text-[#8670FC] border dark:border-0 font-semibold">Withdraw</Button>
+        <Button onClick={()=>navigate('/dashboard/withdraw')} className="bg-white text-[#8670FC] border dark:border-0 font-semibold">Withdraw</Button>
     </div>
     </div>
 
@@ -223,14 +223,14 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
 
 
-    <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
+    {/* <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
         <div className="flex gap-x-2 mb-2">
         <LiaFileInvoiceSolid className="text-4xl" />
         <p className="font-bold pt-1">Invoices</p>
         </div>
         
         <Button onClick={()=>navigate('/dashboard/invoice')} className="bg-white text-orange-400 border dark:border-0 font-semibold mt-4">View</Button>
-    </div>
+    </div> */}
 
     
 

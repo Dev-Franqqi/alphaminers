@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 
 const Miniwidget: React.FC = () => {
-  useEffect(() => {
+useEffect(() => {
+  const loadWidget = () => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
@@ -145,12 +146,24 @@ const Miniwidget: React.FC = () => {
         }
       ]
     });
-    document.getElementsByClassName('tradingview-widget-container__widget')[0].appendChild(script);
 
-    return () => {
-      document.getElementsByClassName('tradingview-widget-container__widget')[0]?.removeChild(script);
-    };
-  }, []);
+    document.getElementsByClassName('tradingview-widget-container__widget')[0].appendChild(script);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadWidget);
+  } else {
+    loadWidget();
+  }
+
+  return () => {
+    const script = document.querySelector('script[src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"]');
+    if (script) {
+      script.remove();
+    }
+  };
+}, []);
+
 
   return (
     <div className="tradingview-widget-container ">

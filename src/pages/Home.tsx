@@ -9,7 +9,9 @@ import { Button  } from "@/components/ui/button"
 import {motion} from "framer-motion"
 import { useInView } from "react-intersection-observer";
 import { ReactNode } from "react"
+import {useNavigate} from "react-router-dom"
 import useDarkContext from "@/components/useDarkContext"
+import { Link } from "react-router-dom"
 interface AnimatedComponentProps {
   children: ReactNode;
   className?:string;
@@ -39,7 +41,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
 export function Homecomp(){
   const {dark,setDark} = useDarkContext();
   
- 
+ const navigate = useNavigate()
 const {isOpen} = useOpencontext()
   useEffect(()=>{
     const darkmode = Cookies.get('darkMode')
@@ -57,7 +59,7 @@ const {isOpen} = useOpencontext()
 
     
 
-    <div className={dark?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
+    <div className={dark?(isOpen?"dark  overflow-hidden relative h-fit bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
     <Navbar />
     
 
@@ -161,7 +163,7 @@ const {isOpen} = useOpencontext()
 <div className="flex justify-center">
 
 
-<Button className="font-semibold bg-[#3333FF] text-white mt-4">Set Up Your Trading Account </Button>
+<Button onClick={()=>navigate('/signup')} className="font-semibold bg-[#3333FF] text-white mt-4">Set Up Your Trading Account </Button>
 </div>
 
 
@@ -192,17 +194,16 @@ const {isOpen} = useOpencontext()
       <div className="text-gray-300 mb-8 md:mb-0">
         <h4 className="text-lg font-semibold">Useful Links</h4>
         <ul className="">
-          <li>About</li>
-          <li>Features</li>
-          <li>Process</li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/pricing">Pricing</Link></li>
         </ul>
       </div>
       <div className="text-gray-300">
-        <h4 className="text-lg font-semibold">Useful Links</h4>
+        <h4 className="text-lg font-semibold">Education Docs</h4>
         <ul>
-          <li>About</li>
-          <li>Features</li>
-          <li>Process</li>
+          <li><Link to="/education">Beginner</Link></li>
+          <li><Link to="/education/intermediate">Intermediate</Link></li>
+          <li><Link to="/education/advanced">Advanced</Link></li>
         </ul>
       </div>
 

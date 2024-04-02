@@ -88,7 +88,7 @@ export default function Navbar(){
                     <Link to="/education">Education</Link>
                 </li>
                 <li className="hover:underline ">
-                <Link to="/">Pricing</Link>
+                <Link to="/pricing">Pricing</Link>
 
                 </li>
                     <li className="hover:underline ">
@@ -127,7 +127,7 @@ export default function Navbar(){
     <ul className="text-xl pt-10 pl-6 flex flex-col space-y-10" >
         <li className="hover:text-underline hover:text-[#3333FF]"><Link to="/about">About</Link></li>
         <li className="hover:text-underline hover:text-[#3333FF]"><Link to={'/education'}>Education</Link></li>
-        <li className="hover:text-underline hover:text-[#3333FF]"><Link to='#pricing'>Pricing</Link></li>
+        <li className="hover:text-underline hover:text-[#3333FF]"><Link to='/pricing'>Pricing</Link></li>
         <li className="hover:text-underline hover:text-[#3333FF]"><Link to="/login">View Dashboard</Link></li>
     </ul>
    
@@ -138,7 +138,7 @@ export default function Navbar(){
     <div className="flex justify-between gap-x-3 border-black">
 
         <Button onClick={()=>navigate('/signup')} className="bg-black dark:bg-white dark:text-black text-semibold text-white">Signup</Button>
-        <Link to={'#pricing'} className="bg-[#3333FF] rounded-md pt-2 text-sm px-2 font-medium text-white text-semibold">View Pricing</Link>
+        <Link to={'/pricing'} className="bg-[#3333FF] rounded-md pt-2 text-sm px-2 font-medium text-white text-semibold">View Pricing</Link>
     </div>
     </div>
     
