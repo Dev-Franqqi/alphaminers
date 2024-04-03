@@ -19,6 +19,7 @@ export default function Settings(){
 
     const [darkMode,setdarkMode] = useState(false)
     const [loading,setLoading] = useState(true)
+
     const [user,setUser] = useState<Person>()
     const handleLogout = ()=>{
         const auth = getAuth();
@@ -42,7 +43,14 @@ signOut(auth).then(() => {
           reader.readAsDataURL(file);
         }
       };
+
+
+  
+
       
+
+
+   
       
     const setToDarkMode = ()=>{
         setdarkMode(true);

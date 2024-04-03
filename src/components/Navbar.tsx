@@ -49,7 +49,7 @@ export default function Navbar(){
     
     return (
         <>
-        <nav className="flex justify-between md:px-5 p-2">
+        <nav className="flex justify-between md:px-5 p-1">
         <div className="flex gap-x-3 w-2/3 md:1/3 mt-3 ">
         <div className="z-[70]">
             
@@ -76,8 +76,8 @@ export default function Navbar(){
           </div>
 
             <header className="flex gap-x-1">
-                <img src={Logo} alt=""/>
-                <p className="mt-2 font-bold text-sm md:text-base text-[#3333FF]">CRYPTNETVERSE</p>
+                <img width={20} className="md:relative md:-top-1"src={Logo} alt=""/>
+                <p className="mt-2 font-bold relative -left-1 text-sm md:text-base text-[#3333FF]">RYPTNETVERSE</p>
             </header>
             </div>
             <ul className="md:flex hidden mt-3 pt-3 w-2/4 md:gap-x-5 ">

@@ -99,6 +99,7 @@ export default function Dashboard(){
           setdarkMode(false)
           
         }
+        
 
         const userCookie = Cookies.get('User');
         if(userCookie){
