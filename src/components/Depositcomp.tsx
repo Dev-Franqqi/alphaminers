@@ -52,14 +52,12 @@ export default function Depositcomp(){
 
     useEffect(()=>{
         if(coin==='BTC'){
-          setWalletDetails('1cc9w38803891cee')
+          setWalletDetails('17zC1mF2fjtB23KMj1FyKToN9gPHW69jfy')
         }
         if(coin==='ETH'){
-          setWalletDetails('1c03891ewueh13ee')
+          setWalletDetails('0xEDdaF9B6bAdD8eC33585EdEe4dC6aAa50d2AB002')
         }
-        if(coin==='USDT'){
-          setWalletDetails('1cc39393891cee')
-        }
+       
     },[coin])
 
     return(
@@ -86,7 +84,7 @@ export default function Depositcomp(){
               <SelectContent className="bg-neutral-800 text-white ">
                 <SelectItem value="BTC">BTC</SelectItem>
                 <SelectItem value="ETH">ETH</SelectItem>
-                <SelectItem value="USDT">USDT</SelectItem>
+              
               </SelectContent>
             </Select>
         </form>
