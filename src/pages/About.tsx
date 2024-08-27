@@ -2,6 +2,7 @@
 import { useEffect,useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Cookies from "js-cookie"
+import Messaginglayout from "@/components/Messaginglayout"
 export default function About(){
     const navigate = useNavigate()
     const gotoHome = ()=>{
@@ -65,6 +66,7 @@ export default function About(){
 </nav>
 
 <main className="text-base px-2 pt-10">
+  <Messaginglayout />
 <p>
 Cryptnetverse is one of the leading platforms in Switzerland offering Crude Oil Trading, Forex and spreads. Regulated by the CFTC and based in New York, with member funds held in segregated accounts in major US banks, Cryptnetverse offers secure and innovative ways to participate in the markets.
     </p>

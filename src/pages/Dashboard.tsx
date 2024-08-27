@@ -15,6 +15,7 @@ import { SlGraph } from "react-icons/sl";
 import { IoWalletOutline } from "react-icons/io5";
 import { FaGear } from "react-icons/fa6";
 import Logo from '../assets/Logo.svg'
+import Messaginglayout from "@/components/Messaginglayout";
 
 export interface Person{
   email:string;
@@ -180,7 +181,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
 
 <main className=" mt-4 p-4 flex flex-col space-y-4 ">
-
+<Messaginglayout />
 
     <div className=" border flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
 

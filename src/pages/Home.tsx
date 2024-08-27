@@ -12,12 +12,12 @@ import { ReactNode } from "react"
 import {useNavigate} from "react-router-dom"
 import useDarkContext from "@/components/useDarkContext"
 import { Link } from "react-router-dom"
+import Messaginglayout from "@/components/Messaginglayout"
 interface AnimatedComponentProps {
   children: ReactNode;
   className?:string;
 }
 import useOpencontext from "@/components/hooks/useOpencontext"
-
 
 const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
   const { ref, inView } = useInView({
@@ -58,12 +58,13 @@ const {isOpen} = useOpencontext()
   return(
 
     
+  
 
     <div className={dark?(isOpen?"dark  overflow-hidden relative h-fit bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
     <Navbar />
     
 
-
+<Messaginglayout />
     
     
     <section className="firstsect w-full h-[36rem] md:h-screen">
@@ -216,9 +217,13 @@ const {isOpen} = useOpencontext()
 
 export default function Home(){
   return(
+
     <OpenContextProvider>
       <Homecomp />
+      {/* <FaTelegram className="absolute text-blue-800 text-4xl top-0" /> */}
     </OpenContextProvider>
+
+
 
   )
 }
