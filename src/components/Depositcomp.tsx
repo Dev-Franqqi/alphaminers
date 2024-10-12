@@ -41,8 +41,8 @@ type CopyTextButtonProps = {
 };
 
 export default function Depositcomp(){
-    const [coin,setCoin] = useState<string>('')    
-    const [amount ,setAmount] = useState<string>('')
+    const [coin,setCoin] = useState<string>('')   
+    const [amount ,setAmount] = useState<string>('');
     const [walletDetails,setWalletDetails] = useState('')
     // const [response,setResponse] = useState('')
 
@@ -56,6 +56,9 @@ export default function Depositcomp(){
         }
         if(coin==='ETH'){
           setWalletDetails('0xEDdaF9B6bAdD8eC33585EdEe4dC6aAa50d2AB002')
+        }
+        if(coin==='USDT'){
+          setWalletDetails('TP87FxRyFT5tR5zws2T5q246ZvRsRzabuR')
         }
        
     },[coin])
@@ -84,6 +87,7 @@ export default function Depositcomp(){
               <SelectContent className="bg-neutral-800 text-white ">
                 <SelectItem value="BTC">BTC</SelectItem>
                 <SelectItem value="ETH">ETH</SelectItem>
+                <SelectItem value="USDT">USDT</SelectItem>
               
               </SelectContent>
             </Select>
